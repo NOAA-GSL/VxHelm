@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "matsmongo.fullname" . }}
+  labels:
+spec:
+  ports:
+    - name: mongoport-mongo
+      port: 27017
+      protocol: TCP
+      targetPort: NodePort
+  selector:
+    app.kubernetes.io/name: {{ include "matsmongohelm.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  sessionAffinity: None
+  type: ClusterIP
