@@ -10,7 +10,7 @@ spec:
       protocol: TCP
       targetPort: NodePort
   selector:
-    app.kubernetes.io/name: {{ include "matsmongohelm.name" . }}
+    app.kubernetes.io/name: {{ include "matsmongo.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
   sessionAffinity: None
   type: ClusterIP

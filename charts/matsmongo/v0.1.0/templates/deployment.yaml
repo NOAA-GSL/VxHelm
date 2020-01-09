@@ -7,7 +7,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-  app.kubernetes.io/name: {{ include "matsmongohelm.name" . }}
+  app.kubernetes.io/name: {{ include "matsmongo.name" . }}
   app.kubernetes.io/instance: {{ .Release.Name }}
   strategy:
     rollingUpdate:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        app.kubernetes.io/name: {{ include "matsmongohelm.name" . }}
+        app.kubernetes.io/name: {{ include "matsmongo.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
       labels:
     spec:
@@ -43,7 +43,7 @@ spec:
         volumeMounts:
         - mountPath: /data/db
           name: data
-          subPath: {{ .Values.MatsVolumeDataPath }}/mongodata
+          subPath: {{ .Values.deployentEnvironment }}/mongodata
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
