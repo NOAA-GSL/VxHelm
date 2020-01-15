@@ -19,9 +19,9 @@ questions:
         description: "MongoDB image tag"
         type: string
         label: Image Tag
-- variable: persistentVolumeClaim
-description: "The preconfigured persistent volume claim - minimum 10GB"
-label: The persistent Volume Claim where database data will be persisted
-default: ""
-type: pvc
-required: true
+   - variable: persistentVolumeClaim
+     description: "The preconfigured persistent volume claim - minimum 10GB"
+     label: The persistent Volume Claim where database data will be persisted
+     default: ""
+     type: pvc
+     required: true
