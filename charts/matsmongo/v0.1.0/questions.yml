@@ -1,7 +1,7 @@
 categories:
   -Database
 questions:
-- variable: image
+- variable: defaultImage
   default: "true"
   description: "Use default Docker images"
   label: Use Default Images
