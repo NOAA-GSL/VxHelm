@@ -1,27 +1,27 @@
 categories:
-  - Database
+  -Database
 questions:
-  - variable: defaultImage
-    default: "true"
-    description: "Use default Docker images"
-    label: Use Default Images
-    type: boolean
-    show_subquestion_if: false
-    group: "Container Images"
-    subquestions:
-      - variable: image.repository
-        default: "mongo"
-        description: "MongoDB image name"
-        type: string
-        label: MongoDB Image Name
-      - variable: image.tag
-        default: "3.6.5"
-        description: "MongoDB image tag"
-        type: string
-        label: Image Tag
-   - variable: persistentVolumeClaim
-     description: "The preconfigured persistent volume claim - minimum 10GB"
-     label: The persistent Volume Claim where database data will be persisted
-     default: ""
-     type: pvc
-     required: true
+- variable: defaultImage
+  default: "true"
+  description: "Use default Docker images"
+  label: Use Default Images
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+  - variable: image.repository
+    default: "mongo"
+    description: "MongoDB image name"
+    type: string
+    label: MongoDB Image Name
+  - variable: image.tag
+    default: "3.6.5"
+    description: "MongoDB image tag"
+    type: string
+    label: Image Tag
+- variable: persistentVolumeClaim
+  description: "The preconfigured persistent volume claim - minimum 10GB"
+  label: The persistent Volume Claim where database data will be persisted
+  default: ""
+  type: pvc
+  required: true
