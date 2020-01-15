@@ -2,10 +2,14 @@ categories:
   - Database
 questions:
 - variable: deploymentEnvironment
-default: "matsdev"
 description: "The build environment that this deployment is intended to operate under [matsdev, matspreint, matsint, matsprod]"
 type: enum
-options: ["matsdev","matspreint","matsint","matsprod"]
+options:
+-"matsdev"
+-"matspreint"
+-"matsint"
+-"matsprod"
+default: "matsdev"
 required: true
 label: The persistent Volume Claim where database data will be persisted
 - variable: persistentVolumeClaim
