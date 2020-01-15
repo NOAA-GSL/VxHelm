@@ -9,7 +9,6 @@ options:
 -"matspreint"
 -"matsint"
 -"matsprod"
-default: "matsdev"
 required: true
 label: The persistent Volume Claim where database data will be persisted
 - variable: persistentVolumeClaim
