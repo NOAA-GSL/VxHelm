@@ -19,19 +19,9 @@ questions:
         description: "MongoDB image tag"
         type: string
         label: Image Tag
-- variable: deploymentEnvironment
-description: "The build environment that this deployment is intended to operate under [matsdev, matspreint, matsint, matsprod]"
-type: enum
-options:
--"matsdev"
--"matspreint"
--"matsint"
--"matsprod"
-required: true
 label: The persistent Volume Claim where database data will be persisted
 - variable: persistentVolumeClaim
-default: "matsdata"
-description: "The preconfigured persistent volume claim"
+default: ""
+description: "The preconfigured persistent volume claim - minimum 10GB"
 type: pvc
 required: true
-label: The persistent Volume Claim where database data will be persisted
