@@ -5,7 +5,7 @@
 replicaCount: 1
 deploymentEnvironment: matsprod
 persistentVolumeClaim: matsdata
-
+rootUrl: https://rancher.localhost
 image:
   repository: mongo
   tag: 4.2.0

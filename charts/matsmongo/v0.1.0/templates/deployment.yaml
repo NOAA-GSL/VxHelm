@@ -1,14 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "matsmongo.fullname" . }}
+  annotations:
+    deployment.kubernetes.io/revision: "1"
   labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-{{ .Values.deploymentEnvironment }}-matsmongo
+  name: matsmongo
+  namespace: {{ .Values.deploymentEnvironment }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
-  app.kubernetes.io/name: {{ include "matsmongo.name" . }}
-  app.kubernetes.io/instance: {{ .Release.Name }}
+      workload.user.cattle.io/workloadselector: deployment-{{ .Values.deploymentEnvironment }}-matsmongo
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -17,40 +23,39 @@ spec:
   template:
     metadata:
       annotations:
-        app.kubernetes.io/name: {{ include "matsmongo.name" . }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
+        field.cattle.io/ports: '[[{"containerPort":27017,"dnsName":"matsmongo-nodeport","kind":"NodePort","name":"mongoport","protocol":"TCP"}]]'
       labels:
+        workload.user.cattle.io/workloadselector: deployment-{{ .Values.deploymentEnvironment }}-matsmongo
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: IfNotPresent
-        ports:
-        - name: mongoport
-          containerPort: 27017
-          protocol: TCP
-        resources: {}
-        securityContext:
-          allowPrivilegeEscalation: false
-          capabilities: {}
-          privileged: false
-          readOnlyRootFilesystem: false
-          runAsNonRoot: false
-        stdin: true
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        tty: true
-        volumeMounts:
-        - mountPath: /data/db
-          name: data
-          subPath: {{ .Values.deployentEnvironment }}/mongodata
+        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: Always
+          name: matsmongo
+          ports:
+            - containerPort: 27017
+              name: mongoport
+              protocol: TCP
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+          volumeMounts:
+            - mountPath: /data/db
+              name: data
+              subPath: {{ .Values.persistentVolumeClaim }}/dev/mongodata
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: {{ .Values.persistentVolumeClaim }}
-
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistentVolumeClaim }}
