@@ -1,9 +1,22 @@
 categories:
   -Database
 questions:
+- variable: defaultImage
+  default: "true"
+  description: "Use default Docker images"
+  label: Use Default Image
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+  - variable: image.tag
+    default: "4.2.0"
+    description: "MongoDB image tag"
+    type: string
+    label: Image Tag
 - variable: persistentVolumeClaim
   description: "The preconfigured persistent volume claim - minimum 10GB"
   label: The persistent Volume Claim where database data will be persisted
-  default: "matsdata"
+  default: ""
   type: pvc
   required: true
