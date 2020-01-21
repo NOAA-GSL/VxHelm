@@ -1,7 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}
+  annotations:
+    field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:mongo"]'
+    workload.cattle.io/targetWorkloadIdNoop: "true"
+    workload.cattle.io/workloadPortBased: "true"
+  labels:
+    cattle.io/creator: norman
+  name: "mongo"
+  namespace: {{ .Release.Namespace }}
 spec:
   ports:
     - name: mongoport-mongo

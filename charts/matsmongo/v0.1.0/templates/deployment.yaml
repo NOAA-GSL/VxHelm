@@ -5,8 +5,8 @@ metadata:
     deployment.kubernetes.io/revision: "1"
   labels:
     cattle.io/creator: norman
-    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-matsmongo
-  name: matsmongo
+    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
+  name: mongo
   namespace: {{ .Release.Namespace }}
 spec:
   progressDeadlineSeconds: 600
@@ -14,7 +14,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-matsmongo
+      workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -23,9 +23,9 @@ spec:
   template:
     metadata:
       annotations:
-        field.cattle.io/ports: '[[{"containerPort":27017,"dnsName":"matsmongo-nodeport","kind":"NodePort","name":"mongoport","protocol":"TCP"}]]'
+        field.cattle.io/ports: '[[{"containerPort":27017,"dnsName":"mongo-nodeport","kind":"NodePort","name":"mongoport","protocol":"TCP"}]]'
       labels:
-        workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-matsmongo
+        workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
     spec:
       containers:
         - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
