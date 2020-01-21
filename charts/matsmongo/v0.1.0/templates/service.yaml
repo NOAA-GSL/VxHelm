@@ -2,18 +2,30 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    field.cattle.io/publicEndpoints: '[{"port":30959,"protocol":"TCP","serviceName":"matsdev:mongo-nodeport","allNodes":true}]'
     field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:mongo"]'
     workload.cattle.io/targetWorkloadIdNoop: "true"
     workload.cattle.io/workloadPortBased: "true"
+  creationTimestamp: "2020-01-17T23:03:02Z"
   labels:
     cattle.io/creator: norman
-  name: "mongo"
+  name: mongo-nodeport
   namespace: {{ .Release.Namespace }}
+  ownerReferences:
+    - apiVersion: apps/v1beta2
+      controller: true
+      kind: deployment
+      name: mongo
+      uid: 8366e5fa-397d-11ea-98c2-025000000001
 spec:
+  externalTrafficPolicy: Cluster
   ports:
-    - name: mongoport-mongo
+    - name: 27017tcp01
+      nodePort:
       port: 27017
       protocol: TCP
       targetPort: 27017
+  selector:
+    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort
