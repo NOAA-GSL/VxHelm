@@ -5,7 +5,7 @@
 - A preconfigured Storage Class suitable for creating a Persistent Volume Claim of 10 GB.
 - Only one matsmongo app per namespace is allowed and only one Persistent Volume Claim will be generated.
 - The internal port must be left as 27017 (the standard mongoport)
-- The external port will be set to CLUSTERIP so that this database can be reached from the outside by determining the public IP of the cluster, and the public port of the matsmongo service.
+- The external port will be set to CLUSTERIP so that this database can be reached from the outside by determining the public IP of the cluster, and the public port of the mongo service.
 - Assuming the namespace is matsprod, use this technique to connect a mongo client ...
 ```node=$(rancher kubectl -n matsprod get nodes | grep worker | head -1 | awk '{print $1}' | awk '{$1=$1};1')
 host=$(rancher kubectl -n matsprod describe nodes ${node} | grep public-ip | awk -F':' '{print $2}' | awk '{$1=$1};1')
