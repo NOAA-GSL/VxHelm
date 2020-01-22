@@ -4,9 +4,7 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
     field.cattle.io/creatorId: user-22wwq
-    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:home","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/home","allNodes":false},{"port":31473,"protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:home-nodeport","allNodes":true}]'
-  creationTimestamp: null
-  generation: 1
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:home","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/home","allNodes":false},{""protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:home-nodeport","allNodes":true}]'
   {{- if eq .Values.deploymentEnvironment "matsdev" }}
     deployment = "development"
   {{- else if eq .Values.deploymentEnvironment "matspreint" }}
@@ -36,9 +34,7 @@ spec:
   template:
     metadata:
       annotations:
-        cattle.io/timestamp: "2020-01-06T17:17:37Z"
         field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"home-nodeport","kind":"NodePort","name":"80tcp01","protocol":"TCP"}]]'
-      creationTimestamp: null
       labels:
         workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-home"
     spec:

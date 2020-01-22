@@ -1,9 +1,7 @@
 #MATSMONGO
-MATSMONGO is a streamlined version of MongoDB that is suitable for providing persistence for a suite of MATS apps.
-This chart requires the pre-allocation of a Storage Class that the chart can use to allocate a dynamic Persistent Volume Claim.
-A Persistent Volume Claim with minimum 10GB of storage space will be allocated for each namespace into
-which MATSMONGO, a cooresponding MATSHOME, and a set of MATS apps are deployed. 
-This volume claim will provide persistance for mongo and will also be shared to any MATS apps that are deployed into the same namespace.
+MATSMONGO is a streamlined installation of a standard MongoDB that is suitable for providing persistence for a suite of MATS apps.
+This chart requires the pre-allocation of a Persistent Volume Claim with minimum 10GB of storage space will be allocated for each namespace.
+This volume claim will provide persistance for mongo and should also be shared to any MATS apps (including matshome) that are deployed into the same namespace.
 
 The chart is intended to be deployed into a [Rancher](https://rancher.com/) environment.
 ## MongoDB

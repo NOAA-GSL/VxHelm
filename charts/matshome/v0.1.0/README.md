@@ -3,6 +3,7 @@
 - Kubernetes 1.4+ with Beta APIs enabled
 - a specified namespace named after one of the MATS build environments ["matsdev","matspreint","matsint","matsprod"]
 - A preconfigured Storage Class suitable for creating a Persistent Volume Claim of 10 GB.
+- The deployment of a matsmongo into the target namespace.
 - Only one MATSHOME app per MATS namespace is allowed
 - The internal port must be left as 80
 - an ingress will be established such that this app can be reached from the outside via https.
