@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-    field.cattle.io/creatorId:
+    field.cattle.io/creatorId: "user-22wwq"
     field.cattle.io/publicEndpoints: '[{"protocol":"TCP","serviceName":"{{ .Release.Namespace }}:mongo-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
