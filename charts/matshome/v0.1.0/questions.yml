@@ -8,6 +8,10 @@ type: enum
 options: ["matsdev","matspreint","matsint","matsprod"]
 required: true
 label: The persistent Volume Claim where database data will be persisted
+- variable: rootUrl
+default: https://rancher.localhost
+type: string
+required: true
 - variable: persistentVolumeClaim
 default: "matsdata"
 description: "The preconfigured persistent volume claim"

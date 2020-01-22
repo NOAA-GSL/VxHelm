@@ -48,14 +48,12 @@ spec:
           {{- if eq .Values.deploymentEnvironment "matsdev" }}
           image: "matsapps/development:mats-home-nightly"
           {{- else if eq .Values.deploymentEnvironment "matspreint" }}
-          image: "matsapps/integration:mats-home-nightly"
+          image: "matsapps/development:mats-home-nightly"
           {{- else if eq .Values.deploymentEnvironment "matsint" }}
           image: "matsapps/production:mats-home-nightly"
           {{- else if eq .Values.deploymentEnvironment "matsprod" }}
           image: "matsapps/production:mats-home-nightly"
           {{- end }}
-
-          image: matsapps/$development:mats-home-nightly
           imagePullPolicy: Always
           name: home
           ports:
