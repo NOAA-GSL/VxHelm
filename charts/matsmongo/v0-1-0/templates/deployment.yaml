@@ -3,11 +3,14 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
+    field.cattle.io/creatorId:
+    field.cattle.io/publicEndpoints: '[{"protocol":"TCP","serviceName":"{{ .Release.Namespace }}:mongo-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
   name: mongo
   namespace: {{ .Release.Namespace }}
+  selfLink: /apis/apps/v1/namespaces/{{ .Release.Namespace }}/deployments/mongo
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -23,7 +26,7 @@ spec:
   template:
     metadata:
       annotations:
-        field.cattle.io/ports: '[[{"containerPort":27017,"dnsName":"mongo-nodeport","kind":"NodePort","name":"mongoport","protocol":"TCP"}]]'
+        field.cattle.io/ports: '[[{"containerPort":27017,"dnsName":"mongo-nodeport","kind":"NodePort","name":"27017tcp01","protocol":"TCP"}]]'
       labels:
         workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
     spec:
@@ -33,7 +36,7 @@ spec:
           name: mongo
           ports:
             - containerPort: 27017
-              name: mongoport
+              name: 27017tcp01
               protocol: TCP
           resources: {}
           securityContext:
