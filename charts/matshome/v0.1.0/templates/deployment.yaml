@@ -5,15 +5,6 @@ metadata:
     deployment.kubernetes.io/revision: "1"
     field.cattle.io/creatorId: user-22wwq
     field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:home","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/home","allNodes":false},{""protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:home-nodeport","allNodes":true}]'
-  {{- if eq .Values.deploymentEnvironment "matsdev" }}
-    deployment = "development"
-  {{- else if eq .Values.deploymentEnvironment "matspreint" }}
-    deployment = "integration"
-  {{- else if eq .Values.deploymentEnvironment "matsint" }}
-    deployment = "production"
-  {{- else if eq .Values.deploymentEnvironment "matsprod" }}
-    deployment = "production"
-  {{- end }}
   labels:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-home"
@@ -41,11 +32,29 @@ spec:
       containers:
         - env:
             - name: DEPLOYMENT_ENVIRONMENT
-              value: $deployment
+              {{- if eq .Values.deploymentEnvironment "matsdev" }}
+              value: "development"
+              {{- else if eq .Values.deploymentEnvironment "matspreint" }}
+              value: "integration"
+              {{- else if eq .Values.deploymentEnvironment "matsint" }}
+              value: "production"
+              {{- else if eq .Values.deploymentEnvironment "matsprod" }}
+              value: "production"
+              {{- end }}
             - name: GROUP_ORDER
               value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
             - name: ROOT_URL
               value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/home"
+          {{- if eq .Values.deploymentEnvironment "matsdev" }}
+          image: "matsapps/development:mats-home-nightly"
+          {{- else if eq .Values.deploymentEnvironment "matspreint" }}
+          image: "matsapps/integration:mats-home-nightly"
+          {{- else if eq .Values.deploymentEnvironment "matsint" }}
+          image: "matsapps/production:mats-home-nightly"
+          {{- else if eq .Values.deploymentEnvironment "matsprod" }}
+          image: "matsapps/production:mats-home-nightly"
+          {{- end }}
+
           image: matsapps/$development:mats-home-nightly
           imagePullPolicy: Always
           name: home
