@@ -44,7 +44,7 @@ spec:
             - name: GROUP_ORDER
               value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
             - name: ROOT_URL
-              value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/home"
+              value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
           {{- if eq .Values.deploymentEnvironment "matsdev" }}
           image: "matsapps/development:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
           {{- else if eq .Values.deploymentEnvironment "matspreint" }}
