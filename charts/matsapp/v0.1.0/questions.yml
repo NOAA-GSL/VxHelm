@@ -29,7 +29,7 @@ questions:
   group: "Container Images"
   subquestions:
    - variable: image.tag
-     default: "4.2.0"
+     default: "latest"
      description: "MongoDB image tag"
      type: string
      label: Image Tag
