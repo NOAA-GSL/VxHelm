@@ -19,7 +19,7 @@ questions:
   type: enum
   options: ["aircraft","anomalycor","blrs","ceiling","ceiling15","compositeReflectivity","echotop","landuse","met-airquality","met-anomalycor","met-ensemble","met-precip","met-surface","met-upperair","precipAQPI","precipitation1hr","precipitation24hr","precipitationSub24hr","ptype","surface","surfrad","upperair","vil","visibility","visibility15"]
   required: true
-  label: The Deployment Environment
+  label: The specific app to be deployed
 - variable: defaultImage
   default: "true"
   description: "Use default Docker images"
