@@ -74,7 +74,7 @@ spec:
           volumeMounts:
             - mountPath: /usr/app/settings
               name: settings
-              subPath: "{{ .Values.deploymentEnvironment }}/settings"
+              subPath: {{ .Values.deploymentEnvironment }}/settings
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
