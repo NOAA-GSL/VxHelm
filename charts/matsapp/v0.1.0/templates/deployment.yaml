@@ -4,18 +4,7 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
     field.cattle.io/creatorId: user-22wwq
-    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:{{ .Values.appReference }}","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}","allNodes":false},{"port":31473,"protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:{{ .Values.appReference }}-nodeport","allNodes":true}]'
-  creationTimestamp: null
-  generation: 1
-  {{- if eq .Values.deploymentEnvironment "matsdev" }}
-    deployment = "development"
-  {{- else if eq .Values.deploymentEnvironment "matspreint" }}
-    deployment = "integration"
-  {{- else if eq .Values.deploymentEnvironment "matsint" }}
-    deployment = "production"
-  {{- else if eq .Values.deploymentEnvironment "matsprod" }}
-    deployment = "production"
-  {{- end }}
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:{{ .Values.appReference }}","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}","allNodes":false},{"protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:{{ .Values.appReference }}-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-{{ .Values.appReference }}"
@@ -36,16 +25,35 @@ spec:
   template:
     metadata:
       annotations:
-        cattle.io/timestamp: "2020-01-06T17:17:37Z"
         field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"{{ .Values.appReference }}-nodeport","kind":"NodePort","name":"80tcp01","protocol":"TCP"}]]'
-      creationTimestamp: null
-      labels: workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-{{ .Values.appReference }}"
+      labels:
+        workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-{{ .Values.appReference }}"
     spec:
       containers:
         - env:
+            - name: DEPLOYMENT_ENVIRONMENT
+              {{- if eq .Values.deploymentEnvironment "matsdev" }}
+              value: "development"
+              {{- else if eq .Values.deploymentEnvironment "matspreint" }}
+              value: "integration"
+              {{- else if eq .Values.deploymentEnvironment "matsint" }}
+              value: "production"
+              {{- else if eq .Values.deploymentEnvironment "matsprod" }}
+              value: "production"
+              {{- end }}
+            - name: GROUP_ORDER
+              value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
             - name: ROOT_URL
-              value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
-          image: matsapps/$development:mats-{{ .Values.appReference }}-nightly
+              value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/home"
+          {{- if eq .Values.deploymentEnvironment "matsdev" }}
+          image: "matsapps/development:{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          {{- else if eq .Values.deploymentEnvironment "matspreint" }}
+          image: "matsapps/integration:{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          {{- else if eq .Values.deploymentEnvironment "matsint" }}
+          image: "matsapps/{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          {{- else if eq .Values.deploymentEnvironment "matsprod" }}
+          image: "matsapps/{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          {{- end }}
           imagePullPolicy: Always
           name: {{ .Values.appReference }}
           ports:
