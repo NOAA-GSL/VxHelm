@@ -28,11 +28,11 @@ questions:
   show_subquestion_if: false
   group: "Container Images"
   subquestions:
-   - variable: image.tag
-     default: "latest"
-     description: "MongoDB image tag"
+   - variable: image.appVersion
+     default: "2.3.13"
+     description: "app version is used to create the app tag"
      type: string
-     label: Image Tag
+     label: App Version
 - variable: persistentVolumeClaim
   default: "matsdata"
   description: "The preconfigured persistent volume claim"

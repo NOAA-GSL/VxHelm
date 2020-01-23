@@ -9,6 +9,6 @@ rootUrl: https://rancher.localhost
 appReference: aircraft
 image:
   repository: matsapps/production
-  tag: latest
+  appVersion: 2.1.13
   pullPolicy: IfNotPresent
 

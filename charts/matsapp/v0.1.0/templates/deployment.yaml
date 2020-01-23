@@ -46,13 +46,13 @@ spec:
             - name: ROOT_URL
               value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/home"
           {{- if eq .Values.deploymentEnvironment "matsdev" }}
-          image: "matsapps/development:{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          image: "matsapps/development:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
           {{- else if eq .Values.deploymentEnvironment "matspreint" }}
-          image: "matsapps/integration:{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          image: "matsapps/integration:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
           {{- else if eq .Values.deploymentEnvironment "matsint" }}
-          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
           {{- else if eq .Values.deploymentEnvironment "matsprod" }}
-          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
           {{- end }}
           imagePullPolicy: Always
           name: {{ .Values.appReference }}
