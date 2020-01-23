@@ -50,9 +50,9 @@ spec:
           {{- else if eq .Values.deploymentEnvironment "matspreint" }}
           image: "matsapps/integration:{{ .Values.appReference }}-{{ .Values.image.tag }}"
           {{- else if eq .Values.deploymentEnvironment "matsint" }}
-          image: "matsapps/{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.tag }}"
           {{- else if eq .Values.deploymentEnvironment "matsprod" }}
-          image: "matsapps/{{ .Values.appReference }}-{{ .Values.image.tag }}"
+          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.tag }}"
           {{- end }}
           imagePullPolicy: Always
           name: {{ .Values.appReference }}
