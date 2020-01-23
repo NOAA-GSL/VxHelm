@@ -1,20 +1,21 @@
 categories:
-  - Database
+  - App
 questions:
 - variable: deploymentEnvironment
-default: "matsdev"
-description: "The build environment that this deployment is intended to operate under [matsdev, matspreint, matsint, matsprod]"
-type: enum
-options: ["matsdev","matspreint","matsint","matsprod"]
-required: true
-label: The persistent Volume Claim where database data will be persisted
+  default: "matsdev"
+  description: "The build environment that this deployment is intended to operate under [matsdev, matspreint, matsint, matsprod]"
+  type: enum
+  options: ["matsdev","matspreint","matsint","matsprod"]
+  required: true
+  label: The persistent Volume Claim where database data will be persisted
 - variable: rootUrl
-default: https://rancher.localhost
-type: string
-required: true
+  default: https://rancher.localhost
+  type: string
+  required: true
+  label: The root URL of this deployment
 - variable: persistentVolumeClaim
-default: "matsdata"
-description: "The preconfigured persistent volume claim"
-type: pvc
-required: true
-label: The persistent Volume Claim where database data will be persisted
+  default: "matsdata"
+  description: "The preconfigured persistent volume claim"
+  type: pvc
+  required: true
+  label: The persistent Volume Claim where database data will be persisted
