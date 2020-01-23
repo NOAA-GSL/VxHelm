@@ -2,40 +2,40 @@ categories:
   - MATSAPP
 questions:
 - variable: deploymentEnvironment
-    default: "matsprod"
-    description: "The deployment environment one of [matsdev, matspreint, matsint, matsprod]"
-    type: enum
-    options: ["matsdev","matspreint","matsint","matsprod"]
-    required: true
-    label: The Deployment Environment
+  default: "matsprod"
+  description: "The deployment environment one of [matsdev, matspreint, matsint, matsprod]"
+  type: enum
+  options: ["matsdev","matspreint","matsint","matsprod"]
+  required: true
+  label: The Deployment Environment
 - variable: rootUrl
-    default: https://rancher.localhost
-    type: string
-    required: true
-    label: The root URL of this deployment
+  default: https://rancher.localhost
+  type: string
+  required: true
+  label: The root URL of this deployment
 - variable: appReference
-    default: ""
-    description: "The specific app instance to be deployed"
-    type: enum
-    options: ["aircraft","anomalycor","blrs","ceiling","ceiling15","compositeReflectivity","echotop","landuse","met-airquality","met-anomalycor","met-ensemble","met-precip","met-surface","met-upperair","precipAQPI","precipitation1hr","precipitation24hr","precipitationSub24hr","ptype","surface","surfrad","upperair","vil","visibility","visibility15"]
-    required: true
-    label: The Deployment Environment
- - variable: defaultImage
-    default: "true"
-    description: "Use default Docker images"
-    label: Use Default Image
-    type: boolean
-    show_subquestion_if: false
-    group: "Container Images"
-    subquestions:
-     - variable: image.tag
-       default: "4.2.0"
-       description: "MongoDB image tag"
-       type: string
-       label: Image Tag
-- variable: persistentVolumeClaim
-  description: "The preconfigured persistent volume claim - minimum 10GB"
-  label: The persistent Volume Claim where app data will be persisted
   default: ""
+  description: "The specific app instance to be deployed"
+  type: enum
+  options: ["aircraft","anomalycor","blrs","ceiling","ceiling15","compositeReflectivity","echotop","landuse","met-airquality","met-anomalycor","met-ensemble","met-precip","met-surface","met-upperair","precipAQPI","precipitation1hr","precipitation24hr","precipitationSub24hr","ptype","surface","surfrad","upperair","vil","visibility","visibility15"]
+  required: true
+  label: The Deployment Environment
+- variable: defaultImage
+  default: "true"
+  description: "Use default Docker images"
+  label: Use Default Image
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+   - variable: image.tag
+     default: "4.2.0"
+     description: "MongoDB image tag"
+     type: string
+     label: Image Tag
+- variable: persistentVolumeClaim
+  default: "matsdata"
+  description: "The preconfigured persistent volume claim"
   type: pvc
   required: true
+  label: The persistent Volume Claim where the app data will be persisted
