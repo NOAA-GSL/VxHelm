@@ -3,11 +3,11 @@ categories:
 questions:
 - variable: deploymentEnvironment
   default: "matsdev"
-  description: "The build environment that this deployment is intended to operate under [matsdev, matspreint, matsint, matsprod]"
+  description: "The deployment environment one of [matsdev, matspreint, matsint, matsprod]"
   type: enum
   options: ["matsdev","matspreint","matsint","matsprod"]
   required: true
-  label: The persistent Volume Claim where database data will be persisted
+  label: The Deployment Environment
 - variable: rootUrl
   default: https://rancher.localhost
   type: string
