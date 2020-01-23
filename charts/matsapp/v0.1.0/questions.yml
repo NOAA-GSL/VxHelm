@@ -13,7 +13,7 @@ questions:
     type: string
     required: true
     label: The root URL of this deployment
-- variable: app
+- variable: appReference
     default: ""
     description: "The specific app instance to be deployed"
     type: enum
