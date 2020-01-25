@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    field.cattle.io/creatorId: user-22wwq
+    field.cattle.io/ingressState: '{"aG9tZS9tYXRzcHJlaW50L3JhbmNoZXIubG9jYWxob3N0Ly9tYXRzcHJlaW50L2hvbWUvODA=":""}'
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:{{ .Values.appReference }}","ingressName":"{{ .Values.buildEnvironment }}:{{ .Values.appReference }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.buildEnvironment }}/{{ .Values.appReference }}","allNodes":false}]'
+  creationTimestamp: "2020-01-25T19:22:16Z"
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+  name: {{ .Values.appReference }}
+  namespace: {{ .Values.buildEnvironment }}
+  resourceVersion: "8730061"
+  selfLink: /apis/extensions/v1beta1/namespaces/{{ .Values.buildEnvironment }}/ingresses/{{ .Values.appReference }}
+  uid: ff207db1-3fa7-11ea-a8f4-025000000001
+spec:
+  rules:
+    - host: {{ .Values.rootUrl }}
+      http:
+        paths:
+          - backend:
+              serviceName: {{ .Values.appReference }}
+              servicePort: 80
+            path: /{{ .Values.buildEnvironment }}/{{ .Values.appReference }}
