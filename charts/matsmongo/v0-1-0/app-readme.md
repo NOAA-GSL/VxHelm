@@ -1,4 +1,4 @@
-##MATSMONGO
+# MATSMONGO
 MATSMONGO is a streamlined installation of a standard MongoDB that is suitable for providing persistence for a suite of MATS apps.
 This chart requires the pre-allocation of a Persistent Volume Claim with minimum 10GB of storage space will be allocated for each namespace.
 This volume claim will provide persistance for mongo and should also be shared to any MATS apps (including matshome) that are deployed into the same namespace.

@@ -1,4 +1,4 @@
-##MATSHOME
+# MATSHOME
 MATSHOME is an app that serves as a landing page for all the MATS apps that are deployed to a specific namespace.
 
 This chart requires the pre-allocation of a Persistent Volume Claim with minimum 10GB of storage space where MATSMONGO, MATSHOME, and a set of MATS apps are deployed. 
