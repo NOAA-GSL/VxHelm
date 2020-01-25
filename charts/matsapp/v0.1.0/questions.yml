@@ -22,15 +22,15 @@ questions:
   label: The specific app to be deployed
 - variable: defaultImage
   default: "true"
-  description: "Use default Docker images"
-  label: Use Default Image
+  description: "Use default app version for Docker image tag."
+  label: Use Default App version
   type: boolean
   show_subquestion_if: false
   group: "Container Images"
   subquestions:
    - variable: image.appVersion
      default: "2.3.13"
-     description: "app version is used to create the app tag"
+     description: "app version is used to create the app docker image tag"
      type: string
      label: App Version
 - variable: persistentVolumeClaim
