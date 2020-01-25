@@ -7,7 +7,7 @@ questions:
   type: enum
   options: ["matsdev","matspreint","matsint","matsprod"]
   required: true
-  label: The Deployment Environment
+  label: The Deployment Environment MUST MATCH MATSMONGO AND MATSHOME
 - variable: rootUrl
   default: https://rancher.localhost
   type: string
@@ -38,4 +38,4 @@ questions:
   description: "The preconfigured persistent volume claim"
   type: pvc
   required: true
-  label: The persistent Volume Claim where the app data will be persisted
+  label: The persistent Volume Claim where the app data will be persisted  MUST MATCH MATSMONGO AND MATSHOME

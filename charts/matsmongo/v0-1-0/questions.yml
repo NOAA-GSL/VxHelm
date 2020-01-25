@@ -16,7 +16,7 @@ questions:
     label: Image Tag
 - variable: persistentVolumeClaim
   description: "The preconfigured persistent volume claim - minimum 10GB"
-  label: The persistent Volume Claim where database data will be persisted
+  label: The persistent Volume Claim where database data will be persisted MUST MATCH MATSMONGO AND MATSHOME
   default: ""
   type: pvc
   required: true
