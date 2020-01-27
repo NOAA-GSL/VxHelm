@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
+myhost:= "rancher.localhost"
+mypath:= "/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
+myingressName:= "matspreint:aircraft"
 metadata:
-  myhost:= "rancher.localhost"
-  mypath:= "/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
-  myingressName:="matspreint:aircraft"
   annotations:
     field.cattle.io/creatorId: user-22wwq
     field.cattle.io/ingressState: '{"YWlyY3JhZnQvbWF0c3ByZWludC9yYW5jaGVyLmxvY2FsaG9zdC8vbWF0c3ByZWludC9haXJjcmFmdC84MA==":""}'
