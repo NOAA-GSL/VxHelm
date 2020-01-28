@@ -1,12 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
-{{- $myhost := "rancher.localhost" -}}
-{{- $myingressName:= "matspreint:aircraft" -}}
 metadata:
   annotations:
     field.cattle.io/creatorId: user-22wwq
     field.cattle.io/ingressState: '{"YWlyY3JhZnQvbWF0c3ByZWludC9yYW5jaGVyLmxvY2FsaG9zdC8vbWF0c3ByZWludC9haXJjcmFmdC84MA==":""}'
-    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":$myingressName,"ingressName":$myingressName,"hostname":$myhost,"path":"/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}","allNodes":false}]'
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"matspreint:aircraft","ingressName":"matspreint:aircraft","hostname":"rancher.localhost","path":"/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}","allNodes":false}]'
   labels:
     cattle.io/creator: norman
   name: {{ .Values.appReference }}
@@ -14,7 +12,7 @@ metadata:
   selfLink: /apis/extensions/v1beta1/namespaces/{{ .Values.deploymentEnvironment }}/ingresses/{{ .Values.appReference }}
 spec:
   rules:
-    - host: $myhost
+    - host: "rancher.localhost"
       http:
         paths:
           - backend:
