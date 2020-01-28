@@ -4,19 +4,19 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
     field.cattle.io/creatorId: user-22wwq
-    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:{{ .Values.appReference }}","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}","allNodes":false},{"protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:{{ .Values.appReference }}-nodeport","allNodes":true}]'
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:aircraft","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/aircraft","allNodes":false},{"protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:aircraft-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
-    workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-{{ .Values.appReference }}"
-  name: {{ .Values.appReference }}
-  selfLink: "/apis/apps/v1/namespaces/{{ .Values.deploymentEnvironment }}/deployments/{{ .Values.appReference }}"
+    workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-aircraft"
+  name: aircraft
+  selfLink: "/apis/apps/v1/namespaces/{{ .Values.deploymentEnvironment }}/deployments/aircraft"
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-{{ .Values.appReference }}"
+      workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-aircraft"
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -25,9 +25,9 @@ spec:
   template:
     metadata:
       annotations:
-        field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"{{ .Values.appReference }}-nodeport","kind":"NodePort","name":"80tcp01","protocol":"TCP"}]]'
+        field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"aircraft-nodeport","kind":"NodePort","name":"80tcp01","protocol":"TCP"}]]'
       labels:
-        workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-{{ .Values.appReference }}"
+        workload.user.cattle.io/workloadselector: "deployment-{{ .Values.deploymentEnvironment }}-aircraft"
     spec:
       containers:
         - env:
@@ -44,18 +44,18 @@ spec:
             - name: GROUP_ORDER
               value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
             - name: ROOT_URL
-              value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
+              value: "{{ .Values.rootUrl }}/{{ .Values.deploymentEnvironment }}/aircraft"
           {{- if eq .Values.deploymentEnvironment "matsdev" }}
-          image: "matsapps/development:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
+          image: "matsapps/development:aircraft-{{ .Values.image.appVersion }}"
           {{- else if eq .Values.deploymentEnvironment "matspreint" }}
-          image: "matsapps/integration:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
+          image: "matsapps/integration:aircraft-{{ .Values.image.appVersion }}"
           {{- else if eq .Values.deploymentEnvironment "matsint" }}
-          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
+          image: "matsapps/production:aircraft-{{ .Values.image.appVersion }}"
           {{- else if eq .Values.deploymentEnvironment "matsprod" }}
-          image: "matsapps/production:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
+          image: "matsapps/production:aircraft-{{ .Values.image.appVersion }}"
           {{- end }}
           imagePullPolicy: Always
-          name: {{ .Values.appReference }}
+          name: aircraft
           ports:
             - containerPort: 80
               name: 80tcp01

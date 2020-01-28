@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Values.appReference }}
+  name: aircraft
   namespace: {{ .Values.deploymentEnvironment }}
 spec:
   rules:
     - host: "rancher.localhost"
       http:
         paths:
-          - path: "/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
+          - path: "/{{ .Values.deploymentEnvironment }}/aircraft"
             backend:
-              serviceName: {{ .Values.appReference }}
+              serviceName: aircraft
               servicePort: 80

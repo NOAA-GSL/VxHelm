@@ -6,7 +6,6 @@ replicaCount: 1
 deploymentEnvironment: matsprod
 persistentVolumeClaim: matsdata
 rootUrl: https://rancher.localhost
-appReference: aircraft
 image:
   repository: matsapps/production
   appVersion: 2.3.13

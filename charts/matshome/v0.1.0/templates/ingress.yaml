@@ -8,12 +8,10 @@ spec:
     - host: "rancher.localhost"
       http:
         paths:
-          - path: "/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
+          - path: "/{{ .Values.deploymentEnvironment }}/home"
             backend:
-              serviceName: {{ .Values.appReference }}
+              serviceName: home
               servicePort: 80
-
-
 
 apiVersion: extensions/v1beta1
 kind: Ingress
