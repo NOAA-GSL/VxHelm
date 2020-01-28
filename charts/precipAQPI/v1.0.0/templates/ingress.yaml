@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: precipAQPI
+  namespace: {{ .Values.deploymentEnvironment }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Values.deploymentEnvironment }}/precipAQPI"
+            backend:
+              serviceName: precipAQPI
+              servicePort: 80

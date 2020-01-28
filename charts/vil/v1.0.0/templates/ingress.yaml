@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: vil
+  namespace: {{ .Values.deploymentEnvironment }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Values.deploymentEnvironment }}/vil"
+            backend:
+              serviceName: vil
+              servicePort: 80

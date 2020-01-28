@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: met-precip
+  namespace: {{ .Values.deploymentEnvironment }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Values.deploymentEnvironment }}/met-precip"
+            backend:
+              serviceName: met-precip
+              servicePort: 80

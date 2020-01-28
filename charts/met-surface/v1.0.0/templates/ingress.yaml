@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: met-surface
+  namespace: {{ .Values.deploymentEnvironment }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Values.deploymentEnvironment }}/met-surface"
+            backend:
+              serviceName: met-surface
+              servicePort: 80

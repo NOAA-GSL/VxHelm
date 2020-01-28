@@ -1,0 +1,13 @@
+# Default values for matsmongo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+deploymentEnvironment: matsprod
+persistentVolumeClaim: matsdata
+rootUrl: https://rancher.localhost
+image:
+  repository: matsapps/production
+  appVersion: 2.3.13
+  pullPolicy: IfNotPresent
+

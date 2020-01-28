@@ -1,0 +1,12 @@
+apiVersion: v1
+name: landuse
+version: 0.1.0
+appVersion: 4.0.12
+description: MATS app for a MATS deployment.
+keywords:
+- mats
+- mongodb
+- database
+- nosql
+- cluster
+icon: file://../matsapp.png
