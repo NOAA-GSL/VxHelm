@@ -1,6 +1,23 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
+  name: home
+  namespace: {{ .Values.deploymentEnvironment }}
+spec:
+  rules:
+    - host: "rancher.localhost"
+      http:
+        paths:
+          - path: "/{{ .Values.deploymentEnvironment }}/{{ .Values.appReference }}"
+            backend:
+              serviceName: {{ .Values.appReference }}
+              servicePort: 80
+
+
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
   annotations:
     field.cattle.io/creatorId: user-22wwq
     field.cattle.io/ingressState: '{"aG9tZS9tYXRzcHJlaW50L3JhbmNoZXIubG9jYWxob3N0Ly9tYXRzcHJlaW50L2hvbWUvODA=":""}'

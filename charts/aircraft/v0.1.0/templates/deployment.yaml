@@ -84,4 +84,3 @@ spec:
         - name: settings
           persistentVolumeClaim:
             claimName: matsdata
-status: {}
