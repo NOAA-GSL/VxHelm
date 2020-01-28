@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Values.deploymentEnvironment }}
 spec:
   rules:
-    - host: "rancher.localhost"
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
       http:
         paths:
           - path: "/{{ .Values.deploymentEnvironment }}/home"
