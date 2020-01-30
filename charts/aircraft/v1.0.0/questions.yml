@@ -6,6 +6,7 @@ questions:
     description: "The rancher assigned userId from api key"
     type: string
     label: The rancher assigned userid - login to rancher and examin keys (under user symbol) and "View in API"
+    required: true
 - variable: deploymentEnvironment
   default: "matsprod"
   description: "The deployment environment one of [matsdev, matspreint, matsint, matsprod]"
