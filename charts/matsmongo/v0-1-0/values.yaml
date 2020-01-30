@@ -3,6 +3,7 @@
 # Declare variables to be passed into your templates.
 
 persistentVolumeClaim: matsdata
+userId: ""
 image:
   repository: mongo
   tag: 4.2.0
