@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-    field.cattle.io/creatorId: user-22wwq
+    field.cattle.io/creatorId: {{ .Values.userId }}
     field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Values.buildEnvironment }}:aircraft","ingressName":"{{ .Values.buildEnvironment }}:matsapps-{{ .Values.buildEnvironment }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Values.deploymentEnvironment }}/aircraft","allNodes":false},{"protocol":"TCP","serviceName":"{{ .Values.deploymentEnvironment }}:aircraft-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
