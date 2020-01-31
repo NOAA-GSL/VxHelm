@@ -48,11 +48,11 @@ spec:
           {{- if eq .Values.deploymentEnvironment "matsdev" }}
           image: "matsapps/development:mats-home-nightly"
           {{- else if eq .Values.deploymentEnvironment "matspreint" }}
-          image: "matsapps/development:mats-home-nightly"
+          image: "matsapps/development:mats-home-1.0.0"
           {{- else if eq .Values.deploymentEnvironment "matsint" }}
-          image: "matsapps/production:mats-home-nightly"
+          image: "matsapps/integration:mats-home-1.0.0"
           {{- else if eq .Values.deploymentEnvironment "matsprod" }}
-          image: "matsapps/production:mats-home-nightly"
+          image: "matsapps/production:mats-home-1.0.0"
           {{- end }}
           imagePullPolicy: Always
           name: home
