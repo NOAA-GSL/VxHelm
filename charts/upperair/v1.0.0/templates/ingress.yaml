@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: upperair
+  namespace: {{ .Release.Namespace }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Release.Namespace }}/upperair"
+            backend:
+              serviceName: upperair
+              servicePort: 80

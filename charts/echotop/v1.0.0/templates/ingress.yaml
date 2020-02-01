@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echotop
+  namespace: {{ .Release.Namespace }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Release.Namespace }}/echotop"
+            backend:
+              serviceName: echotop
+              servicePort: 80
