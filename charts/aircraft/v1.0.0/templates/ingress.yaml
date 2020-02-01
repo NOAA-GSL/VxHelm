@@ -2,13 +2,13 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: aircraft
-  namespace: {{ .Values.deploymentEnvironment }}
+  namespace: {{ .Release.Namespace }}
 spec:
   rules:
     - host: {{ .Values.rootUrl | replace "https://" "" }}
       http:
         paths:
-          - path: "/{{ .Values.deploymentEnvironment }}/aircraft"
+          - path: "/{{ .Release.Namespace }}/aircraft"
             backend:
               serviceName: aircraft
               servicePort: 80
