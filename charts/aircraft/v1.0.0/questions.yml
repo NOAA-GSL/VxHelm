@@ -7,13 +7,6 @@ questions:
   type: string
   label: The rancher assigned userid - login to rancher and examin keys (under user symbol) and "View in API"
   required: true
-- variable: deploymentEnvironment
-  default: "matsprod"
-  description: "The deployment environment one of [matsdev, matspreint, matsint, matsprod]"
-  type: enum
-  options: ["matsdev","matspreint","matsint","matsprod"]
-  required: true
-  label: The Deployment Environment MUST MATCH MATSMONGO AND MATSHOME
 - variable: rootUrl
   default: https://rancher.localhost
   type: string
