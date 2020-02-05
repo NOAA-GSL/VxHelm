@@ -45,7 +45,7 @@ spec:
               value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
             - name: ROOT_URL
               value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/home"
-          image: "matsapps/production:mats-home-1.0.0"
+          image: "matsapps/{{ .Values.image.repository }}:mats-home-{{ .Values.image.tag }}"
           imagePullPolicy: Always
           name: home
           ports:
