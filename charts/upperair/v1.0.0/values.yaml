@@ -6,6 +6,8 @@ replicaCount: 1
 persistentVolumeClaim: matsdata
 rootUrl: https://rancher.localhost
 userId: ""
+mongoUser: "mats"
+mongoPwd: "matsUser0"
 image:
   repository: matsapps/production
   appVersion: 2.4.0

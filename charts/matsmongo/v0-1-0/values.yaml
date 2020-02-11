@@ -4,6 +4,8 @@
 
 persistentVolumeClaim: matsdata
 userId: ""
+mongoUser: "mats"
+mongoPwd: "matsUser0"
 image:
   repository: mongo
   tag: 4.2.0
