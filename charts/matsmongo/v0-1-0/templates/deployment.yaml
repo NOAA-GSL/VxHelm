@@ -33,7 +33,7 @@ spec:
       containers:
       - env:
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: {{ .Values.mongoPassword }}
+          value: {{ .Values.mongoPwd }}
         - name: MONGO_INITDB_ROOT_USERNAME
           value: {{ .Values.mongoUser }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
