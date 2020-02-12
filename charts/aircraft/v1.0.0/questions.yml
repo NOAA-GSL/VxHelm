@@ -25,6 +25,24 @@ questions:
      description: "app version is used to create the app docker image tag"
      type: string
      label: App Version
+- variable: defaultCredentials
+  default: "true"
+  description: "Use the default Mongodb credentials."
+  label: Use Default Mongodb credentials.
+  type: boolean
+  show_subquestion_if: false
+  group: "Credentials"
+  subquestions:
+    - variable: mongoUser
+      default: "mats"
+      description: "The mongodb user that will own the mongo database that is associated with this app"
+      type: string
+      label: Mongodb user
+    - variable: mongoPwd
+      default: "matsUser0"
+      description: "the password for this mongo user"
+      type: string
+      label: Mongodb password
 - variable: persistentVolumeClaim
   default: "matsdata"
   description: "The preconfigured persistent volume claim"
