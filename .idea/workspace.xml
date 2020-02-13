@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9be0e77e-a7a2-49c4-875d-407c7634862e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v1.1.0/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matsmongo/v1.1.0/Chart.yaml" afterDir="false" />
     </list>
     <list id="70db5af6-0445-4207-af78-b5291cc23973" name="Revert &quot;changed version defaults to 2.4.0&quot;" comment="Revert &quot;changed version defaults to 2.4.0&quot;&#10;&#10;This reverts commit 5768a3d1" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,14 +87,7 @@
       <workItem from="1580926642285" duration="3662000" />
       <workItem from="1581357931688" duration="2356000" />
       <workItem from="1581449887633" duration="990000" />
-      <workItem from="1581450894486" duration="16409000" />
-    </task>
-    <task id="LOCAL-00070" summary="working on ingress.yaml files for matshome and matsapp">
-      <created>1580247068194</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1580247068194</updated>
+      <workItem from="1581450894486" duration="16671000" />
     </task>
     <task id="LOCAL-00071" summary="replicat aircraft for all the templates">
       <created>1580249076971</created>
@@ -431,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581637351468</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="add a new version to all the charts so that I can a have a working version that doesn't have mongo requiring authorization and one that does">
+      <created>1581637516201</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1581637516201</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,14 +581,14 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="818" y="252" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1578500376448" />
-    <state x="374" y="104" key="CommitChangelistDialog2" timestamp="1581637351115">
+    <state x="374" y="104" key="CommitChangelistDialog2" timestamp="1581637515898">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="374" y="104" key="CommitChangelistDialog2/-1440.1103.1440.877/1920.23.1920.1057/0.23.1920.1057@0.23.1920.1057" timestamp="1579734607748" />
     <state x="316" y="24" key="CommitChangelistDialog2/-1680.296.1680.1027/0.23.1600.877@0.23.1600.877" timestamp="1580594901298" />
     <state x="281" y="90" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1579982293854" />
     <state x="374" y="83" key="CommitChangelistDialog2/1920.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1579804201431" />
-    <state x="374" y="104" key="CommitChangelistDialog2/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581637351115" />
+    <state x="374" y="104" key="CommitChangelistDialog2/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581637515898" />
     <state x="156" y="57" width="1351" height="800" key="DiffContextDialog" timestamp="1581637236487">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -600,14 +601,14 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="629" y="462" key="Github.Dialog.Accounts.Choose/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1580428994868" />
-    <state x="284" y="383" key="Vcs.Push.Dialog.v2" timestamp="1581637359918">
+    <state x="284" y="383" key="Vcs.Push.Dialog.v2" timestamp="1581637526234">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="379" y="240" key="Vcs.Push.Dialog.v2/-1440.1103.1440.877/1920.23.1920.1057/0.23.1920.1057@0.23.1920.1057" timestamp="1579734614053" />
     <state x="237" y="322" key="Vcs.Push.Dialog.v2/-1680.296.1680.1027/0.23.1600.877@0.23.1600.877" timestamp="1580594908589" />
     <state x="284" y="203" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1579982300163" />
     <state x="379" y="222" key="Vcs.Push.Dialog.v2/1920.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1579804209354" />
-    <state x="284" y="383" key="Vcs.Push.Dialog.v2/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581637359918" />
+    <state x="284" y="383" key="Vcs.Push.Dialog.v2/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581637526234" />
     <state x="453" y="296" key="VcsDiffUtil.ChangesDialog" timestamp="1581631987103">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
