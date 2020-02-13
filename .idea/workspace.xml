@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9be0e77e-a7a2-49c4-875d-407c7634862e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/app-readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/questions.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/templates/ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/.helmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/templates/NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/aircraft/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/aircraft/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/aircraft/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/aircraft/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/aircraft/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/aircraft/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/anomalycor/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/anomalycor/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/anomalycor/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/anomalycor/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/anomalycor/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/anomalycor/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ceiling/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ceiling/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ceiling/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ceiling/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ceiling/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ceiling/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ceiling15/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ceiling15/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ceiling15/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ceiling15/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ceiling15/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ceiling15/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/compositereflectivity/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/compositereflectivity/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/compositereflectivity/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/compositereflectivity/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/compositereflectivity/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/compositereflectivity/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/echotop/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/echotop/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/echotop/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/echotop/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/echotop/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/echotop/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/landuse/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/landuse/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/landuse/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/landuse/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/landuse/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/landuse/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/.helmignore" beforeDir="false" afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/.helmignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/Chart.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/app-readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/app-readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/templates/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/charts/aircraft/v1.1.0/templates/NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/templates/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/templates/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matshome/v0.1.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/.helmignore" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/.helmignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/Chart.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/app-readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/app-readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/templates/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matshome/v1.0.0/templates/NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/matsmongo/v0-1-0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/matsmongo/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-airquality/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-airquality/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-airquality/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-airquality/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-airquality/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-airquality/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-ensemble/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-ensemble/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-ensemble/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-ensemble/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-ensemble/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-ensemble/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-precip/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-precip/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-precip/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-precip/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-precip/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-precip/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-surface/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-surface/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-surface/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-surface/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-surface/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-surface/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-upperair/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-upperair/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-upperair/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-upperair/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/met-upperair/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/met-upperair/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipaqpi/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipaqpi/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipaqpi/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipaqpi/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipaqpi/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipaqpi/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitation1hr/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitation1hr/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitation1hr/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitation1hr/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitation1hr/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitation1hr/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitation24hr/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitation24hr/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitation24hr/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitation24hr/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitation24hr/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitation24hr/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitationsub24hr/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitationsub24hr/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitationsub24hr/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitationsub24hr/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/precipitationsub24hr/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/precipitationsub24hr/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ptype/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ptype/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ptype/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ptype/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/ptype/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/ptype/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/surface/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/surface/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/surface/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/surface/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/surface/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/surface/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/surfrad/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/surfrad/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/surfrad/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/surfrad/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/surfrad/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/surfrad/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/upperair/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/upperair/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/upperair/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/upperair/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/upperair/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/upperair/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/vil/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/vil/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/vil/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/vil/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/vil/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/vil/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/visibility/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/visibility/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/visibility/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/visibility/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/visibility/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/visibility/v1.0.0/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/visibility15/v1.0.0/questions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/visibility15/v1.0.0/questions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/visibility15/v1.0.0/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/visibility15/v1.0.0/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/visibility15/v1.0.0/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/visibility15/v1.0.0/values.yaml" afterDir="false" />
+    </list>
+    <list id="70db5af6-0445-4207-af78-b5291cc23973" name="Revert &quot;changed version defaults to 2.4.0&quot;" comment="Revert &quot;changed version defaults to 2.4.0&quot;&#10;&#10;This reverts commit 5768a3d1" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="gslhelm" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="5e7b2258-851c-46b3-bcd3-2d044e12738f" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1W5TA8DuVD8JacyPpJf5ATEf6wS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/charts" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/charts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CHARTS/matsmongohelm" />
+      <recent name="$PROJECT_DIR$/CHARTS/matsmongo" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9be0e77e-a7a2-49c4-875d-407c7634862e" name="Default Changelist" comment="" />
+      <created>1578438309441</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578438309441</updated>
+      <workItem from="1578438310854" duration="3595000" />
+      <workItem from="1578500395943" duration="27743000" />
+      <workItem from="1579118686326" duration="6177000" />
+      <workItem from="1579630933331" duration="9350000" />
+      <workItem from="1579717229933" duration="17108000" />
+      <workItem from="1579975011165" duration="19147000" />
+      <workItem from="1580317567550" duration="2799000" />
+      <workItem from="1580406014244" duration="3330000" />
+      <workItem from="1580490125030" duration="15099000" />
+      <workItem from="1580926242847" duration="202000" />
+      <workItem from="1580926642285" duration="3662000" />
+      <workItem from="1581357931688" duration="2356000" />
+      <workItem from="1581449887633" duration="990000" />
+      <workItem from="1581450894486" duration="16133000" />
+    </task>
+    <task id="LOCAL-00068" summary="working on ingress.yaml files for matshome and matsapp">
+      <created>1580245428319</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1580245428319</updated>
+    </task>
+    <task id="LOCAL-00069" summary="working on ingress.yaml files for matshome and matsapp">
+      <created>1580246844887</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1580246844887</updated>
+    </task>
+    <task id="LOCAL-00070" summary="working on ingress.yaml files for matshome and matsapp">
+      <created>1580247068194</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1580247068194</updated>
+    </task>
+    <task id="LOCAL-00071" summary="replicat aircraft for all the templates">
+      <created>1580249076971</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1580249076971</updated>
+    </task>
+    <task id="LOCAL-00072" summary="replicat aircraft for all the templates">
+      <created>1580249159096</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1580249159096</updated>
+    </task>
+    <task id="LOCAL-00073" summary="replicat aircraft for all the templates">
+      <created>1580249809034</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1580249809035</updated>
+    </task>
+    <task id="LOCAL-00074" summary="replicat aircraft for all the templates">
+      <created>1580406417683</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1580406417683</updated>
+    </task>
+    <task id="LOCAL-00075" summary="working on userId">
+      <created>1580406479805</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1580406479805</updated>
+    </task>
+    <task id="LOCAL-00076" summary="working on userId">
+      <created>1580406805779</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1580406805779</updated>
+    </task>
+    <task id="LOCAL-00077" summary="working on userId">
+      <created>1580407701406</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1580407701406</updated>
+    </task>
+    <task id="LOCAL-00078" summary="working on userId">
+      <created>1580428935438</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1580428935438</updated>
+    </task>
+    <task id="LOCAL-00079" summary="working on userId">
+      <created>1580511815701</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1580511815701</updated>
+    </task>
+    <task id="LOCAL-00080" summary="ellinating deploymentEnvironment and buildEnvironment and relying only on namespace to identify the environment">
+      <created>1580586877169</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1580586877170</updated>
+    </task>
+    <task id="LOCAL-00081" summary="removed extra apps for now">
+      <created>1580586966247</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1580586966247</updated>
+    </task>
+    <task id="LOCAL-00082" summary=" removed apps to make repo sync in rancher, and changed deploymentEnvironment in ingres.yaml to release.namespace">
+      <created>1580587259903</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1580587259903</updated>
+    </task>
+    <task id="LOCAL-00083" summary=" removed apps to make repo sync in rancher, and changed deploymentEnvironment in ingres.yaml to release.namespace">
+      <created>1580587543471</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1580587543471</updated>
+    </task>
+    <task id="LOCAL-00084" summary=" fix aircraft quaestions and values (remove deploymentEnvironment)">
+      <created>1580588000885</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1580588000886</updated>
+    </task>
+    <task id="LOCAL-00085" summary="change mongo chart name to matsmongo">
+      <created>1580589051145</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1580589051145</updated>
+    </task>
+    <task id="LOCAL-00086" summary="added anomalycor template">
+      <created>1580589555589</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1580589555589</updated>
+    </task>
+    <task id="LOCAL-00087" summary="added all the rest of the apps">
+      <created>1580590863217</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1580590863217</updated>
+    </task>
+    <task id="LOCAL-00088" summary="removing some apps to try to find out why the full set of apps doesn't sync in rancher">
+      <created>1580591954722</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1580591954723</updated>
+    </task>
+    <task id="LOCAL-00089" summary="removing some apps to try to find out why the full set of apps doesn't sync in rancher">
+      <created>1580592013248</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592013248</updated>
+    </task>
+    <task id="LOCAL-00090" summary="removing some apps to try to find out why the full set of apps doesn't sync in rancher">
+      <created>1580592119210</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592119210</updated>
+    </task>
+    <task id="LOCAL-00091" summary="removing some apps to try to find out why the full set of apps doesn't sync in rancher">
+      <created>1580592160109</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592160110</updated>
+    </task>
+    <task id="LOCAL-00092" summary="added ceiling15 back">
+      <created>1580592265055</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592265055</updated>
+    </task>
+    <task id="LOCAL-00093" summary="added all the met* apps back in">
+      <created>1580592342708</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592342708</updated>
+    </task>
+    <task id="LOCAL-00094" summary="added all the p* apps back in">
+      <created>1580592456685</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592456685</updated>
+    </task>
+    <task id="LOCAL-00095" summary="removed precipAQPI">
+      <created>1580592528581</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592528581</updated>
+    </task>
+    <task id="LOCAL-00096" summary="removed precipSub24hr">
+      <created>1580592596328</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592596328</updated>
+    </task>
+    <task id="LOCAL-00097" summary="added visibility15">
+      <created>1580592700853</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592700853</updated>
+    </task>
+    <task id="LOCAL-00098" summary="added compositReflectivity">
+      <created>1580592897759</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1580592897759</updated>
+    </task>
+    <task id="LOCAL-00099" summary="changed compositeReflectivity chart name to compositereflectivity">
+      <created>1580593150924</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1580593150924</updated>
+    </task>
+    <task id="LOCAL-00100" summary="changed compositeReflectivity chart name to compositereflectivity">
+      <created>1580593250839</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1580593250839</updated>
+    </task>
+    <task id="LOCAL-00101" summary="changed compositeReflectivity chart name to compositereflectivity">
+      <created>1580593781096</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1580593781096</updated>
+    </task>
+    <task id="LOCAL-00102" summary="changed compositeReflectivity chart name to compositereflectivity">
+      <created>1580594264887</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1580594264887</updated>
+    </task>
+    <task id="LOCAL-00103" summary="added precipAQPI and precipitationSub24hr with lowercasing the name referwences to avoid a rancher bug tha doesn't like apps with uppercase names">
+      <created>1580594636939</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1580594636939</updated>
+    </task>
+    <task id="LOCAL-00104" summary="added precipAQPI and precipitationSub24hr with lowercasing the name referwences to avoid a rancher bug tha doesn't like apps with uppercase names">
+      <created>1580594901523</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1580594901523</updated>
+    </task>
+    <task id="LOCAL-00105" summary="make mats-home able to deploy from development">
+      <created>1580865837597</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1580865837598</updated>
+    </task>
+    <task id="LOCAL-00106" summary="make mats-home able to deploy from development">
+      <created>1580866129193</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1580866129194</updated>
+    </task>
+    <task id="LOCAL-00107" summary="changed version defaults to 2.4.0">
+      <created>1581031307537</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1581031307537</updated>
+    </task>
+    <task id="LOCAL-00108" summary="adding mongo authentication">
+      <created>1581452066901</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1581452066901</updated>
+    </task>
+    <task id="LOCAL-00109" summary="adding mongo authentication">
+      <created>1581458973031</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1581458973031</updated>
+    </task>
+    <task id="LOCAL-00110" summary="adding mongo authentication">
+      <created>1581459227114</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1581459227114</updated>
+    </task>
+    <task id="LOCAL-00111" summary="adding mongo authentication">
+      <created>1581527296302</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1581527296302</updated>
+    </task>
+    <task id="LOCAL-00112" summary="adding mongo authentication">
+      <created>1581528867385</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1581528867386</updated>
+    </task>
+    <task id="LOCAL-00113" summary="adding mongo authentication">
+      <created>1581613832568</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1581613832568</updated>
+    </task>
+    <task id="LOCAL-00114" summary="adding mongo authentication">
+      <created>1581614118254</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1581614118254</updated>
+    </task>
+    <task id="LOCAL-00115" summary="adding mongo authentication">
+      <created>1581614751072</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1581614751072</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Revert &quot;changed version defaults to 2.4.0&quot;&#10;&#10;This reverts commit 5768a3d1">
+      <created>1581629387059</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1581629387060</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/pierce/gslhelm/charts/aircraft/v1.0.0" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="3">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/pierce/gslhelm/charts/aircraft/v1.1.0" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+        <option value="2" />
+        <option value="3" />
+      </set>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="working on ingress.yaml files for matshome and matsapp - disable ingress files until they are better understood" />
+    <MESSAGE value="working on ingress.yaml files for matshome and matsapp" />
+    <MESSAGE value="replicat aircraft for all the templates" />
+    <MESSAGE value="working on userId" />
+    <MESSAGE value="ellinating deploymentEnvironment and buildEnvironment and relying only on namespace to identify the environment" />
+    <MESSAGE value="removed extra apps for now" />
+    <MESSAGE value=" removed apps to make repo sync in rancher, and changed deploymentEnvironment in ingres.yaml to release.namespace" />
+    <MESSAGE value=" fix aircraft quaestions and values (remove deploymentEnvironment)" />
+    <MESSAGE value="change mongo chart name to matsmongo" />
+    <MESSAGE value="added anomalycor template" />
+    <MESSAGE value="added all the rest of the apps" />
+    <MESSAGE value="removing some apps to try to find out why the full set of apps doesn't sync in rancher" />
+    <MESSAGE value="added ceiling15 back" />
+    <MESSAGE value="added all the met* apps back in" />
+    <MESSAGE value="added all the p* apps back in" />
+    <MESSAGE value="removed precipAQPI" />
+    <MESSAGE value="removed precipSub24hr" />
+    <MESSAGE value="added visibility15" />
+    <MESSAGE value="added compositReflectivity" />
+    <MESSAGE value="changed compositeReflectivity chart name to compositereflectivity" />
+    <MESSAGE value="added precipAQPI and precipitationSub24hr with lowercasing the name referwences to avoid a rancher bug tha doesn't like apps with uppercase names" />
+    <MESSAGE value="make mats-home able to deploy from development" />
+    <MESSAGE value="changed version defaults to 2.4.0" />
+    <MESSAGE value="adding mongo authentication" />
+    <MESSAGE value="Revert &quot;changed version defaults to 2.4.0&quot;&#10;&#10;This reverts commit 5768a3d1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;changed version defaults to 2.4.0&quot;&#10;&#10;This reverts commit 5768a3d1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="376" y="166" key="#Inspections" timestamp="1578593467243">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="376" y="166" key="#Inspections/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1578593467243" />
+    <state x="297" y="132" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580505721620">
+      <screen x="0" y="23" width="1600" height="877" />
+    </state>
+    <state x="297" y="132" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1680.296.1680.1027/0.23.1600.877@0.23.1600.877" timestamp="1580505721620" />
+    <state x="783" y="347" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578440486659">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="783" y="347" key="#com.intellij.fileTypes.FileTypeChooser/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1578440486659" />
+    <state x="818" y="252" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578500376448">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="818" y="252" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1578500376448" />
+    <state x="374" y="104" key="CommitChangelistDialog2" timestamp="1581637314122">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="374" y="104" key="CommitChangelistDialog2/-1440.1103.1440.877/1920.23.1920.1057/0.23.1920.1057@0.23.1920.1057" timestamp="1579734607748" />
+    <state x="316" y="24" key="CommitChangelistDialog2/-1680.296.1680.1027/0.23.1600.877@0.23.1600.877" timestamp="1580594901298" />
+    <state x="281" y="90" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1579982293854" />
+    <state x="374" y="83" key="CommitChangelistDialog2/1920.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1579804201431" />
+    <state x="374" y="104" key="CommitChangelistDialog2/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581637314122" />
+    <state x="156" y="57" width="1351" height="800" key="DiffContextDialog" timestamp="1581637236487">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="275" y="60" width="1126" height="664" key="DiffContextDialog/-1680.296.1680.1027/0.23.1600.877@0.23.1600.877" timestamp="1580591220144" />
+    <state x="73" y="42" width="1351" height="800" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1579810058301" />
+    <state x="553" y="203" width="1351" height="818" key="DiffContextDialog/1920.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1579804164731" />
+    <state x="553" y="203" width="1351" height="818" key="DiffContextDialog/1920.23.1600.877/0.0.1920.1080@0.0.1920.1080" timestamp="1579803341647" />
+    <state x="156" y="57" width="1351" height="800" key="DiffContextDialog/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581637236487" />
+    <state x="629" y="462" key="Github.Dialog.Accounts.Choose" timestamp="1580428994868">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="629" y="462" key="Github.Dialog.Accounts.Choose/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1580428994868" />
+    <state x="284" y="383" key="Vcs.Push.Dialog.v2" timestamp="1581614758320">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="379" y="240" key="Vcs.Push.Dialog.v2/-1440.1103.1440.877/1920.23.1920.1057/0.23.1920.1057@0.23.1920.1057" timestamp="1579734614053" />
+    <state x="237" y="322" key="Vcs.Push.Dialog.v2/-1680.296.1680.1027/0.23.1600.877@0.23.1600.877" timestamp="1580594908589" />
+    <state x="284" y="203" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1579982300163" />
+    <state x="379" y="222" key="Vcs.Push.Dialog.v2/1920.0.1600.900/0.0.1920.1080@0.0.1920.1080" timestamp="1579804209354" />
+    <state x="284" y="383" key="Vcs.Push.Dialog.v2/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581614758320" />
+    <state x="453" y="296" key="VcsDiffUtil.ChangesDialog" timestamp="1581631987103">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="453" y="296" key="VcsDiffUtil.ChangesDialog/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581631987103" />
+    <state x="297" y="148" width="1155" height="682" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581453137583">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="297" y="148" width="1155" height="682" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581453137583" />
+    <state x="167" y="245" width="1654" height="816" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580249779843">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="125" y="207" width="1240" height="677" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1579118862072" />
+    <state x="167" y="245" width="1654" height="816" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1580249779843" />
+    <state x="390" y="259" width="824" height="550" key="find.popup" timestamp="1581631428116">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="659" y="111" width="687" height="729" key="find.popup/-1680.296.1680.1027/0.23.1600.877@0.23.1600.877" timestamp="1580594444295" />
+    <state x="331" y="217" width="675" height="486" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1579978638062" />
+    <state x="390" y="259" width="824" height="550" key="find.popup/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581631428116" />
+    <state x="773" y="301" key="git4idea.branch.GitSmartOperationDialog" timestamp="1581630216419">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="773" y="301" key="git4idea.branch.GitSmartOperationDialog/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1581630216419" />
+    <state x="444" y="232" width="670" height="676" key="search.everywhere.popup" timestamp="1578526626373">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="444" y="232" width="670" height="676" key="search.everywhere.popup/1920.23.1600.877/0.23.1920.1057@0.23.1920.1057" timestamp="1578526626373" />
+  </component>
+</project>

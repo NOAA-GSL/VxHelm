@@ -1,0 +1,20 @@
+categories:
+  - App
+questions:
+- variable: userId
+  default: ""
+  description: "The rancher assigned userId from api key"
+  type: string
+  label: The rancher assigned userid - login to rancher and examin keys (under user symbol) and "View in API"
+  required: true
+- variable: rootUrl
+  default: https://rancher.localhost
+  type: string
+  required: true
+  label: The root URL of this deployment
+- variable: persistentVolumeClaim
+  default: "matsdata"
+  description: "The preconfigured persistent volume claim"
+  type: pvc
+  required: true
+  label: The persistent Volume Claim where the app data will be persisted  MUST MATCH MATSMONGO AND MATSHOME

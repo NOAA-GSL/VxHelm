@@ -1,0 +1,13 @@
+# Default values for matsmongo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+persistentVolumeClaim: matsdata
+userId: ""
+mongoUser: "admin"
+mongoPwd: "Adm1n0"
+image:
+  repository: mongo
+  tag: 4.2.0
+  pullPolicy: IfNotPresent
+

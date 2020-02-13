@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: met-upperair
+  namespace: {{ .Release.Namespace }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Release.Namespace }}/met-upperair"
+            backend:
+              serviceName: met-upperair
+              servicePort: 80
