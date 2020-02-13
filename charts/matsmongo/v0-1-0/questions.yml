@@ -29,12 +29,12 @@ questions:
   group: "Credentials"
   subquestions:
     - variable: mongoUser
-      default: "mats"
+      default: "matsadmin"
       description: "The mongodb user that will own the mongo database that is associated with this app"
       type: string
       label: Mongodb user
     - variable: mongoPwd
-      default: "matsUser0"
+      default: "matsAdmin0"
       description: "the password for this mongo user"
       type: string
       label: Mongodb password
