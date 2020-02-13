@@ -4,19 +4,19 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
     field.cattle.io/creatorId: {{ .Values.userId }}
-    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Release.Namespace }}:home","ingressName":"{{ .Release.Namespace }}:matsapps-{{ .Release.Namespace }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Release.Namespace }}/home","allNodes":false},{""protocol":"TCP","serviceName":"{{ .Release.Namespace }}:home-nodeport","allNodes":true}]'
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":80,"protocol":"HTTP","serviceName":"{{ .Release.Namespace }}:aircraft","ingressName":"{{ .Release.Namespace }}:matsapps-{{ .Release.Namespace }}","hostname":"{{ .Values.rootUrl }}","path":"/{{ .Release.Namespace }}/aircraft","allNodes":false},{"protocol":"TCP","serviceName":"{{ .Release.Namespace }}:aircraft-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
-    workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-home"
-  name: home
-  selfLink: "/apis/apps/v1/namespaces/{{ .Release.Namespace }}/deployments/home"
+    workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-aircraft"
+  name: aircraft
+  selfLink: "/apis/apps/v1/namespaces/{{ .Release.Namespace }}/deployments/aircraft"
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-home"
+      workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-aircraft"
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -25,9 +25,9 @@ spec:
   template:
     metadata:
       annotations:
-        field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"home-nodeport","kind":"NodePort","name":"80tcp01","protocol":"TCP"}]]'
+        field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"aircraft-nodeport","kind":"NodePort","name":"80tcp01","protocol":"TCP"}]]'
       labels:
-        workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-home"
+        workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-aircraft"
     spec:
       containers:
         - env:
@@ -46,10 +46,18 @@ spec:
             - name: GROUP_ORDER
               value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
             - name: ROOT_URL
-              value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/home"
-          image: "{{ .Values.image.repository }}:mats-home-{{ .Values.image.tag }}"
+              value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/aircraft"
+          {{- if eq .Release.Namespace "matsdev" }}
+          image: "matsapps/development:aircraft-{{ .Values.image.appVersion }}"
+          {{- else if eq .Release.Namespace "matspreint" }}
+          image: "matsapps/integration:aircraft-{{ .Values.image.appVersion }}"
+          {{- else if eq .Release.Namespace "matsint" }}
+          image: "matsapps/production:aircraft-{{ .Values.image.appVersion }}"
+          {{- else if eq .Release.Namespace "matsprod" }}
+          image: "matsapps/production:aircraft-{{ .Values.image.appVersion }}"
+          {{- end }}
           imagePullPolicy: Always
-          name: home
+          name: aircraft
           ports:
             - containerPort: 80
               name: 80tcp01
@@ -68,7 +76,7 @@ spec:
           volumeMounts:
             - mountPath: /usr/app/settings
               name: settings
-              subPath: "{{ .Release.Namespace }}/settings"
+              subPath: {{ .Release.Namespace }}/settings
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -78,4 +86,3 @@ spec:
         - name: settings
           persistentVolumeClaim:
             claimName: matsdata
-status: {}

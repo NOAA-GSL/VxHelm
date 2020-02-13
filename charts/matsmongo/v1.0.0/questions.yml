@@ -1,0 +1,28 @@
+categories:
+  -Database
+questions:
+- variable: userId
+  default: ""
+  description: "The rancher assigned userId from api key"
+  type: string
+  label: The rancher assigned userid - login to rancher and examin keys (under user symbol) and "View in API"
+  required: true
+- variable: defaultImage
+  default: "true"
+  description: "Use default Docker images"
+  label: Use Default Image
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+  - variable: image.tag
+    default: "4.2.0"
+    description: "MongoDB image tag"
+    type: string
+    label: Image Tag
+- variable: persistentVolumeClaim
+  description: "The preconfigured persistent volume claim - minimum 10GB"
+  label: The persistent Volume Claim where database data will be persisted MUST MATCH MATSMONGO AND MATSHOME
+  default: ""
+  type: pvc
+  required: true

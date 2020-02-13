@@ -31,11 +31,6 @@ spec:
         workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
     spec:
       containers:
-      - env:
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          value: {{ .Values.mongoPwd }}
-        - name: MONGO_INITDB_ROOT_USERNAME
-          value: {{ .Values.mongoUser }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
         name: mongo
