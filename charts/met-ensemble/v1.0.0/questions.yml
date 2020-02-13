@@ -21,7 +21,7 @@ questions:
   group: "Container Images"
   subquestions:
    - variable: image.appVersion
-     default: "2.4.0"
+     default: "2.3.13"
      description: "app version is used to create the app docker image tag"
      type: string
      label: App Version

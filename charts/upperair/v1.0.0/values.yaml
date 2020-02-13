@@ -10,6 +10,6 @@ mongoUser: "matsUser"
 mongoPwd: "mu-2019"
 image:
   repository: matsapps/production
-  appVersion: 2.4.0
+  appVersion: 2.3.13
   pullPolicy: IfNotPresent
 
