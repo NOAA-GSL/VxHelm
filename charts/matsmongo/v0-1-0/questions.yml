@@ -34,7 +34,7 @@ questions:
       type: string
       label: Mongodb user
     - variable: mongoPwd
-      default: "Admin0"
+      default: "Adm1n0"
       description: "the password for this mongo user"
       type: string
       label: Mongodb password
