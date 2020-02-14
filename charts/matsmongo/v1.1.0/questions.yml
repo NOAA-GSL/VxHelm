@@ -20,24 +20,6 @@ questions:
     description: "MongoDB image tag"
     type: string
     label: Image Tag
-- variable: defaultCredentials
-  default: "true"
-  description: "Use the default Mongodb credentials."
-  label: Use Default Mongodb credentials.
-  type: boolean
-  show_subquestion_if: false
-  group: "Credentials"
-  subquestions:
-    - variable: mongoUser
-      default: "admin"
-      description: "The mongodb user that will own the mongo database that is associated with this app"
-      type: string
-      label: Mongodb user
-    - variable: mongoPwd
-      default: "Adm1n0"
-      description: "the password for this mongo user"
-      type: string
-      label: Mongodb password
 - variable: persistentVolumeClaim
   description: "The preconfigured persistent volume claim - minimum 10GB"
   label: The persistent Volume Claim where database data will be persisted MUST MATCH MATSMONGO AND MATSHOME
