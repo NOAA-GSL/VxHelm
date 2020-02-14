@@ -20,10 +20,10 @@ questions:
     description: "MongoDB image tag"
     type: string
     label: Image Tag
-- variable: defaultCredentials
+- variable: defaultMongoAdminCredentials
   default: "true"
-  description: "Use the default Mongodb credentials."
-  label: Use Default Mongodb credentials.
+  description: "Use the default Mongodb admin credentials?"
+  label: Use Default Mongodb admin credentials.
   type: boolean
   show_subquestion_if: false
   group: "Credentials"
@@ -38,6 +38,19 @@ questions:
       description: "the password for this mongo user"
       type: string
       label: Mongodb password
+- variable: defaultMongoMatsPassword
+  default: "true"
+  description: "Use the default Mongodb MATS password?"
+  label: Use Default Mongodb MATS password.
+  type: boolean
+  show_subquestion_if: false
+  group: "MatsPassword"
+  subquestions:
+    - variable: matsPassword
+      default: "mu-2019"
+      description: "The password for the MATS mongo user - this must match with any apps deployed in this namespace"
+      type: string
+      label: Mongodb MATS password
 - variable: persistentVolumeClaim
   description: "The preconfigured persistent volume claim - minimum 10GB"
   label: The persistent Volume Claim where database data will be persisted MUST MATCH MATSMONGO AND MATSHOME

@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  mongo-init.js: |
+    db.createUser(
+            {
+                user: "{{ .Values.matsUser }}",
+                pwd: "{{ .Values.matsPassword }}",
+                roles: [
+                    {
+                        role: "userAdminAnyDatabase",
+                        db: "admin"
+                    },
+                    {
+                        role: "root",
+                        db: "admin"
+                    }
+                ]
+            }
+    );
+kind: ConfigMap
+metadata:
+  name: mongo-init
+  namespace: matsdev

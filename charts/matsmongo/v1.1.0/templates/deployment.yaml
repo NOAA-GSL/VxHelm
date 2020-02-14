@@ -58,6 +58,8 @@ spec:
           - mountPath: /data/db
             name: data
             subPath: {{ .Values.persistentVolumeClaim }}/dev/mongodata
+          - name: mongo-init
+            mountPath: /docker-entrypoint-initdb.d/
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -67,3 +69,6 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: {{ .Values.persistentVolumeClaim }}
+        - name: mongo-init
+          configMap:
+            name: mongo-init.js
