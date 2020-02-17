@@ -13,10 +13,6 @@ data:
                     {
                         role: "root",
                         db: "admin"
-                    },
-                    {
-                        role: "readwrite",
-                        db: "meteor"
                     }
                 ]
             }
