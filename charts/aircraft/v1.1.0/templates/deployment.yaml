@@ -32,7 +32,7 @@ spec:
       containers:
         - env:
             - name: MONOG_URL
-              value: "mongodb://{{ .Values.mongoUser }}:{{ .Values.mongoPwd }}@localhost:27017"
+              value: "mongodb://{{ .Values.mongoUser }}:{{ .Values.mongoPwd }}@mongo:27017"
             - name: DEPLOYMENT_ENVIRONMENT
               {{- if eq .Release.Namespace "matsdev" }}
               value: "development"
@@ -48,7 +48,7 @@ spec:
             - name: ROOT_URL
               value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/aircraft"
           {{- if eq .Release.Namespace "matsdev" }}
-          image: "matsapps/development:aircraft-{{ .Values.image.appVersion }}"
+          image: "matsapps/development:aircraft-nightly"
           {{- else if eq .Release.Namespace "matspreint" }}
           image: "matsapps/integration:aircraft-{{ .Values.image.appVersion }}"
           {{- else if eq .Release.Namespace "matsint" }}
