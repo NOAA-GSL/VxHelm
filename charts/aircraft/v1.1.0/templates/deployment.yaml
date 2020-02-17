@@ -31,8 +31,8 @@ spec:
     spec:
       containers:
         - env:
-            - name: MONOG_URL
-              value: "mongodb://{{ .Values.mongoUser }}:{{ .Values.mongoPwd }}@mongo:27017/admin"
+            - name: MONGO_URL
+              value: "mongodb://{{ .Values.mongoUser }}:{{ .Values.mongoPwd }}@mongo:27017"
             - name: DEPLOYMENT_ENVIRONMENT
               {{- if eq .Release.Namespace "matsdev" }}
               value: "development"
