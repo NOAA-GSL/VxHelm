@@ -17,6 +17,10 @@ data:
                     {
                         role: "readWriteAnyDatabase",
                         db: "admin"
+                    },
+                    {
+                        role: "readWriteAnyDatabase",
+                        db: "aircraft"
                     }
                 ]
             }
