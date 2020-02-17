@@ -9,10 +9,6 @@ data:
                     {
                         role: "userAdminAnyDatabase",
                         db: "admin"
-                    },
-                    {
-                        role: "root",
-                        db: "admin"
                     }
                 ]
             }
