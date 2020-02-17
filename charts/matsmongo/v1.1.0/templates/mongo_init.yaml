@@ -5,7 +5,6 @@ data:
             {
                 user: "{{ .Values.matsUser }}",
                 pwd: "{{ .Values.matsPassword }}",
-                db: "admin",
                 roles: [
                     {
                         role: "userAdminAnyDatabase",
