@@ -8,15 +8,15 @@ data:
                 roles: [
                     {
                         role: "root",
-                        db: "admin"
+                        db: "aircraft"
                     },
                     {
                         role: "root",
-                        db: "admin"
+                        db: "aircraft"
                     },
                     {
                         role: "root",
-                        db: "admin"
+                        db: "aircraft"
                     }
                 ]
             }
