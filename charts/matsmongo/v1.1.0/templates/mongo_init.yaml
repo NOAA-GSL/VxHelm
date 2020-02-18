@@ -7,15 +7,15 @@ data:
                 pwd: "{{ .Values.matsMongoPassword }}",
                 roles: [
                     {
-                        role: "userAdminAnyDatabase",
+                        role: "root",
                         db: "admin"
                     },
                     {
-                        role: "dbAdminAnyDatabase",
+                        role: "root",
                         db: "admin"
                     },
                     {
-                        role: "readWriteAnyDatabase",
+                        role: "root",
                         db: "admin"
                     }
                 ]
