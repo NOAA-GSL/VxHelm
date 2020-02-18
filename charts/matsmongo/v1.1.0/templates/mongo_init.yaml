@@ -19,9 +19,17 @@ data:
                         db: "admin"
                     },
                     {
+                        role: "userAdminAnyDatabase",
+                        db: "aircraft"
+                    },
+                    {
+                        role: "dbAdminAnyDatabase",
+                        db: "aircraft"
+                    },
+                    {
                         role: "readWriteAnyDatabase",
                         db: "aircraft"
-                    }
+                    },
                 ]
             }
     );
