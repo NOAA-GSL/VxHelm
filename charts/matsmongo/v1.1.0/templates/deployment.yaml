@@ -36,6 +36,8 @@ spec:
           value: {{ .Values.adminMongoPassword }}
         - name: MONGO_INITDB_ROOT_USERNAME
           value: {{ .Values.adminMongoUser }}
+        - name: MONGO_INITDB_DATABASE
+          value: "admin"
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
         name: mongo
