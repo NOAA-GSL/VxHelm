@@ -32,7 +32,8 @@ spec:
       containers:
         - env:
             - name: MONGO_URL
-              value: "mongodb://{{ .Values.mongoUser }}:{{ .Values.mongoPwd }}@mongo:27017/aircraft"
+              #MONGO_URL on our old nginx deployments ... mongodb://localhost:27017/met-surface - I think localhost needs to be mongo for the cluster address
+              value: "mongodb://{{ .Values.matsMongoUser }}:{{ .Values.matsMongoPassword }}@mongo:27017/aircraft"
             - name: DEPLOYMENT_ENVIRONMENT
               {{- if eq .Release.Namespace "matsdev" }}
               value: "development"

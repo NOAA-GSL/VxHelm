@@ -1,10 +1,11 @@
 apiVersion: v1
 data:
   mongo-init.js: |
+    use admin
     db.createUser(
             {
                 user: "{{ .Values.matsUser }}",
-                pwd: "{{ .Values.matsPassword }}",
+                pwd: "{{ .Values.matsMongoPassword }}",
                 roles: [
                     {
                         role: "userAdminAnyDatabase",
@@ -17,19 +18,7 @@ data:
                     {
                         role: "readWriteAnyDatabase",
                         db: "admin"
-                    },
-                    {
-                        role: "userAdminAnyDatabase",
-                        db: "aircraft"
-                    },
-                    {
-                        role: "dbAdminAnyDatabase",
-                        db: "aircraft"
-                    },
-                    {
-                        role: "readWriteAnyDatabase",
-                        db: "aircraft"
-                    },
+                    }
                 ]
             }
     );

@@ -33,9 +33,9 @@ spec:
       containers:
       - env:
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: {{ .Values.mongoPwd }}
+          value: {{ .Values.adminMongoPassword }}
         - name: MONGO_INITDB_ROOT_USERNAME
-          value: {{ .Values.mongoUser }}
+          value: {{ .Values.adminMongoUser }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
         name: mongo

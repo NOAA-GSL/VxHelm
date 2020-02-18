@@ -33,7 +33,7 @@ questions:
   show_subquestion_if: false
   group: "Credentials"
   subquestions:
-    - variable: mongoPwd
+    - variable: matsMongoPassword
       default: "mu-2019"
       description: "the password for this mongo user"
       type: string
