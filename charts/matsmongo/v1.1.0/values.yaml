@@ -7,8 +7,6 @@
 persistentVolumeClaim: matsdata
 # the rancher user id found by examining the cli access key "View API" and finding the value for the "authn.management.cattle.io/token-userId" field
 userId: ""
-adminMongoPassword: "Adm1n0"
-adminMongoUser: "admin"
 matsMongoUser: "matsUser"
 matsMongoPassword: "mu-2019"
 image:

@@ -33,9 +33,9 @@ spec:
       containers:
       - env:
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: {{ .Values.adminMongoPassword }}
+          value: "Adm1n0"
         - name: MONGO_INITDB_ROOT_USERNAME
-          value: {{ .Values.adminMongoUser }}
+          value: "admin"
         - name: MONGO_INITDB_DATABASE
           value: "admin"
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}

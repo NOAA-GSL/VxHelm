@@ -20,16 +20,6 @@ questions:
     description: "MongoDB image tag"
     type: string
     label: Image Tag
-- variable: adminMongoUser
-  default: "admin"
-  type : string
-  description: "The mongo admin user."
-  label: "mongo admin user"
-- variable: adminMongoPassword
-  default: "Adm1n0"
-  type: string
-  description: "The mongo admin password."
-  label: "mongo admin password"
 - variable: defaultMongoCredentials
   default: "true"
   description: "Use the default Mongodb credentials?"
