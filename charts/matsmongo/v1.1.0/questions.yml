@@ -22,6 +22,7 @@ questions:
     label: Image Tag
 - variable: defaultMongoCredentials
   default: "true"
+  required: "false"
   description: "Use the default Mongodb credentials?"
   label: Use Default Mongodb admin credentials.
   type: boolean
