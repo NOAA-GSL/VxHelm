@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - env:
-            - name: MONOG_URL
+            - name: MONGO_URL
               value: "mongodb://localhost:27017"
             - name: DEPLOYMENT_ENVIRONMENT
               {{- if eq .Release.Namespace "matsdev" }}
