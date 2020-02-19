@@ -50,13 +50,13 @@ spec:
             - name: ROOT_URL
               value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/precipitationsub24hr"
           {{- if eq .Release.Namespace "matsdev" }}
-          image: "matsapps/development:precipitationsub24hr-{{ .Values.image.appVersion }}"
+          image: "matsapps/development:precipitationSub24hr-nightly"
           {{- else if eq .Release.Namespace "matspreint" }}
-          image: "matsapps/integration:precipitationsub24hr-{{ .Values.image.appVersion }}"
+          image: "matsapps/integration:precipitationSub24hr-{{ .Values.image.appVersion }}"
           {{- else if eq .Release.Namespace "matsint" }}
-          image: "matsapps/production:precipitationsub24hr-{{ .Values.image.appVersion }}"
+          image: "matsapps/production:precipitationSub24hr-{{ .Values.image.appVersion }}"
           {{- else if eq .Release.Namespace "matsprod" }}
-          image: "matsapps/production:precipitationsub24hr-{{ .Values.image.appVersion }}"
+          image: "matsapps/production:precipitationSub24hr-{{ .Values.image.appVersion }}"
           {{- end }}
           imagePullPolicy: Always
           name: precipitationsub24hr

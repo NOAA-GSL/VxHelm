@@ -50,13 +50,13 @@ spec:
             - name: ROOT_URL
               value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/precipaqpi"
           {{- if eq .Release.Namespace "matsdev" }}
-          image: "matsapps/development:precipaqpi-{{ .Values.image.appVersion }}"
+          image: "matsapps/development:precipAQPI-{{ .Values.image.appVersion }}"
           {{- else if eq .Release.Namespace "matspreint" }}
-          image: "matsapps/integration:precipaqpi-{{ .Values.image.appVersion }}"
+          image: "matsapps/integration:precipAQPI-{{ .Values.image.appVersion }}"
           {{- else if eq .Release.Namespace "matsint" }}
-          image: "matsapps/production:precipaqpi-{{ .Values.image.appVersion }}"
+          image: "matsapps/production:preciAQPI-{{ .Values.image.appVersion }}"
           {{- else if eq .Release.Namespace "matsprod" }}
-          image: "matsapps/production:precipaqpi-{{ .Values.image.appVersion }}"
+          image: "matsapps/production:precipAQPI-{{ .Values.image.appVersion }}"
           {{- end }}
           imagePullPolicy: Always
           name: precipaqpi
