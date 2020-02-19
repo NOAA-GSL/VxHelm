@@ -26,6 +26,7 @@ questions:
      type: string
      label: App Version
 - variable: defaultCredentials
+  required: false
   default: "true"
   description: "Use the default Mongodb credentials."
   label: Use Default Mongodb credentials.

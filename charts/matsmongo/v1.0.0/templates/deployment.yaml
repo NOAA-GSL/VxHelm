@@ -33,9 +33,9 @@ spec:
       containers:
       - env:
         - name: MONGO_NOT_INITDB_ROOT_PASSWORD
-          value: fred
+          value: "placeholder"
         - name: MONGO_NOT_INITDB_ROOT_USERNAME
-          value: fred
+          value: "placeholder"
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
         name: mongo
