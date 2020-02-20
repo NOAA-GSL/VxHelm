@@ -8,7 +8,7 @@ spec:
     - host: {{ .Values.rootUrl | replace "https://" "" }}
       http:
         paths:
-          - path: "/{{ .Release.Namespace }}"
+          - path: "/{{ .Release.Namespace }}/home"
             backend:
               serviceName: home
               servicePort: 80
