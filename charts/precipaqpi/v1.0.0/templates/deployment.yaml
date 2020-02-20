@@ -42,7 +42,7 @@ spec:
               value: "integration"
               {{- else if eq .Release.Namespace "matsint" }}
               value: "production"
-              {{- else if eq .Release.Namespace "matsprod" }}
+              {{- else if or (eq .Release.Namespace "matsprod") (eq .Release.Namespace "metexpress") }}
               value: "production"
               {{- end }}
             - name: GROUP_ORDER
@@ -55,7 +55,7 @@ spec:
           image: "matsapps/integration:precipAQPI-{{ .Values.image.appVersion }}"
           {{- else if eq .Release.Namespace "matsint" }}
           image: "matsapps/production:preciAQPI-{{ .Values.image.appVersion }}"
-          {{- else if eq .Release.Namespace "matsprod" }}
+          {{- else if or (eq .Release.Namespace "matsprod") (eq .Release.Namespace "metexpress") }}
           image: "matsapps/production:precipAQPI-{{ .Values.image.appVersion }}"
           {{- end }}
           imagePullPolicy: Always
