@@ -8,6 +8,6 @@ rootUrl: https://rancher.localhost
 userId: ""
 image:
   repository: matsapps/production
-  appVersion: 2.4.0
+  appVersion: 2.4.2
   pullPolicy: IfNotPresent
 
