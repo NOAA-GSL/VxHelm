@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: met-anomalycor
+  namespace: {{ .Release.Namespace }}
+spec:
+  rules:
+    - host: {{ .Values.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Release.Namespace }}/met-anomalycor"
+            backend:
+              serviceName: met-anomalycor
+              servicePort: 80
