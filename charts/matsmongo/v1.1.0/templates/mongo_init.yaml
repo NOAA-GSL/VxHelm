@@ -24,4 +24,4 @@ data:
 kind: ConfigMap
 metadata:
   name: mongo-init
-  namespace: matsdev
+  namespace: {{ .Release.Namespace }}
