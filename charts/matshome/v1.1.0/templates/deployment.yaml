@@ -48,7 +48,7 @@ spec:
             - name: GROUP_ORDER
               value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
             - name: ROOT_URL
-              value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/home"
+              value: "{{ .Values.rootUrl }}/{{ .Release.Namespace }}/"
           image: "{{ .Values.image.repository }}:mats-home-{{ .Values.image.tag }}"
           imagePullPolicy: Always
           name: home
