@@ -9,12 +9,6 @@ metadata:
     cattle.io/creator: norman
   name: home
   namespace: {{ .Release.Namespace }}
-  ownerReferences:
-    - apiVersion: apps/v1beta2
-      controller: true
-      kind: deployment
-      name: home
-  selfLink: /api/v1/namespaces/metexpress/services/home
 spec:
   ports:
     - name: 80tcp01-home
