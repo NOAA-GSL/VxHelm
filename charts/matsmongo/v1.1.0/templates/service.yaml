@@ -11,10 +11,10 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   ports:
-    - name: 80tcp01-mongo
-      port: 80
+    - name: 27017tcp01-mongo
+      port: 27017
       protocol: TCP
-      targetPort: 80
+      targetPort: 27017
   selector:
     workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
   sessionAffinity: None
