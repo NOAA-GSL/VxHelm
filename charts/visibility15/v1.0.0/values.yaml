@@ -5,7 +5,6 @@
 replicaCount: 1
 persistentVolumeClaim: matsdata
 rootUrl: https://rancher.localhost
-userId: ""
 image:
   repository: matsapps/production
   appVersion: 2.4.2

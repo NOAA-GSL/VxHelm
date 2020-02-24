@@ -5,8 +5,6 @@
 # the volume that will be mounted for all the mats data
 # this volume must be shared by the mongo app, the home app, and all the other apps
 persistentVolumeClaim: matsdata
-# the rancher user id found by examining the cli access key "View API" and finding the value for the "authn.management.cattle.io/token-userId" field
-userId: ""
 matsMongoUser: "matsUser"
 matsMongoPassword: "mu-2019"
 image:
