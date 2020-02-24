@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:precipaqpi"]'
+    workload.cattle.io/targetWorkloadIdNoop: "true"
+    workload.cattle.io/workloadPortBased: "true"
+  labels:
+    cattle.io/creator: norman
+  name: precipaqpi
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+    - name: 80tcp01-precipaqpi
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-precipaqpi
+  sessionAffinity: None
+  type: ClusterIP

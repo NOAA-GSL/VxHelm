@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:precipitation1hr"]'
+    workload.cattle.io/targetWorkloadIdNoop: "true"
+    workload.cattle.io/workloadPortBased: "true"
+  labels:
+    cattle.io/creator: norman
+  name: precipitation1hr
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+    - name: 80tcp01-precipitation1hr
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-precipitation1hr
+  sessionAffinity: None
+  type: ClusterIP
