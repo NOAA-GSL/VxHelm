@@ -58,7 +58,7 @@ spec:
         volumeMounts:
           - mountPath: /data/db
             name: data
-            subPath: {{ .Values.persistentVolumeClaim }}/dev/mongodata
+            subPath: {{ .Values.persistentVolumeClaim }}/{{ .Release.Namespace }}/mongodata
           - name: mongo-init
             mountPath: /docker-entrypoint-initdb.d
       dnsPolicy: ClusterFirst
