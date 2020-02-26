@@ -15,7 +15,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-compositeReflectivity"
+      workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-compositereflectivity"
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -26,7 +26,7 @@ spec:
       annotations:
         field.cattle.io/ports: '[[{"containerPort":80,"dnsName":"compositereflectivity-nodeport","kind":"NodePort","name":"80tcp01","protocol":"TCP"}]]'
       labels:
-        workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-compositeReflectivity"
+        workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-compositereflectivity"
     spec:
       containers:
         - env:
