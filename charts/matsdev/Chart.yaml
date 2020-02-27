@@ -1,0 +1,14 @@
+apiVersion: v2
+name: matsdev
+description: A Helm chart for Kubernetes deployment of a development mats suite of applications.
+
+type: application
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the matsapp version.
+version: 1.2.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application.
+appVersion: nightly
+icon: file://../matsapp.png

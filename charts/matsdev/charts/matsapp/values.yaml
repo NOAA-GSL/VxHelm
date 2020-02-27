@@ -1,0 +1,11 @@
+
+replicaCount: 1
+persistentVolumeClaim: matsdata
+rootUrl: https://rancher.localhost
+matsMongoUser: "matsUser"
+matsMongoPassword: "mu-2019"
+image:
+  repository: matsapps/development
+  appVersion: nightly
+  pullPolicy: IfNotPresent
+
