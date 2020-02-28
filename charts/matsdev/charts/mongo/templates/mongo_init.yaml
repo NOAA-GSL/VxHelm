@@ -3,8 +3,8 @@ data:
   {{ .Values.appName }}-init.js: |
     db.createUser(
             {
-                user: "{{ .Values.global.matsMongoUser }}",
-                pwd: "{{ .Values.global.matsMongoPassword }}",
+                user: "{{ .Values.matsMongoUser }}",
+                pwd: "{{ .Values.matsMongoPassword }}",
                 roles: [
                     {
                         role: "userAdminAnyDatabase",
