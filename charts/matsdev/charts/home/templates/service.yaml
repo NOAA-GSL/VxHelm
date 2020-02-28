@@ -2,20 +2,20 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:{{ .Chart.Name }}"]'
+    field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:{{ .Values.appName }}"]'
     workload.cattle.io/targetWorkloadIdNoop: "true"
     workload.cattle.io/workloadPortBased: "true"
   labels:
     cattle.io/creator: norman
-  name: {{ .Chart.Name }}
+  name: {{ .Values.appName }}
   namespace: {{ .Release.Namespace }}
 spec:
   ports:
-    - name: {{ .Values.portNumber }}tcp01-{{ .Chart.Name }}
+    - name: {{ .Values.portNumber }}tcp01-{{ .Values.appName }}
       port: {{ .Values.portNumber }}
       protocol: TCP
       targetPort: {{ .Values.portNumber }}
   selector:
-    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-{{ .Chart.Name }}
+    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-{{ .Values.appName }}
   sessionAffinity: None
   type: ClusterIP

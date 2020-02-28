@@ -8,6 +8,7 @@ globals:
   matsMongoPassword: "mu-2019"
 
 matsmongo:
+  appName: mongo
   persistentVolumeClaim: matsdata
 
 app:
@@ -20,8 +21,9 @@ app:
     appVersion: nightly
 
 matshome:
-persistentVolumeClaim: matsdata
-rootUrl: https://rancher.localhost
-image:
-  repository: matsapps/development
-  appVersion: nightly
+  appName: home
+  persistentVolumeClaim: matsdata
+  rootUrl: https://rancher.localhost
+  image:
+    repository: matsapps/development
+    appVersion: nightly
