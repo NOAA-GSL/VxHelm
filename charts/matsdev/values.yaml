@@ -11,7 +11,7 @@ matsmongo:
   persistentVolumeClaim: matsdata
 
 app:
-  name: aircraft
+  Name: aircraft
   appVersion: nightly
   persistentVolumeClaim: matsdata
   rootUrl: https://rancher.localhost
