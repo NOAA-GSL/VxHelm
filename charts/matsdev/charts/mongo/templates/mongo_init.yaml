@@ -3,8 +3,8 @@ data:
   {{ .Values.appName }}-init.js: |
     db.createUser(
             {
-                user: "{{ .Values.matsMongoUser }}",
-                pwd: "{{ .Values.matsMongoPassword }}",
+                user: "{{ .Values.global.matsMongoUser }}",
+                pwd: "{{ .Values.global.matsMongoPassword }}",
                 roles: [
                     {
                         role: "userAdminAnyDatabase",
@@ -23,5 +23,5 @@ data:
     );
 kind: ConfigMap
 metadata:
-  name: {{ .Values.appName }}-init
+  name: {{ .Values.appName }}init
   namespace: {{ .Release.Namespace }}

@@ -4,10 +4,9 @@
 
 # the volume that will be mounted for all the mats data
 # this volume must be shared by the mongo app, the home app, and all the other apps
+appName: mongo
 persistentVolumeClaim: matsdata
 portNumber: 27017
-matsMongoUser: "matsUser"
-matsMongoPassword: "mu-2019"
 image:
   repository: mongo
   appVersion: 4.2.0

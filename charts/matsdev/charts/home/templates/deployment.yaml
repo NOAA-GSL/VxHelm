@@ -32,7 +32,7 @@ spec:
       containers:
         - env:
             - name: MONGO_URL
-              value: "mongodb://{{ .Values.matsMongoUser }}:{{ .Values.matsMongoPassword }}@mongo:27017/{{ .Values.appName }}?authSource=admin"
+              value: "mongodb://{{ .Values.global.matsMongoUser }}:{{ .Values.global.matsMongoPassword }}@mongo:27017/{{ .Values.appName }}?authSource=admin"
             - name: DEPLOYMENT_ENVIRONMENT
               {{- if eq .Release.Namespace "matsdev" }}
               value: "development"
