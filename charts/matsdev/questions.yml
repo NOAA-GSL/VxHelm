@@ -9,7 +9,7 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.appVersion
-    default: "2.4.5"
+    default: "nightly"
     description: "MATS app default version"
     type: string
     label: Image Tag
