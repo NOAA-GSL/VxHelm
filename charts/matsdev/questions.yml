@@ -9,8 +9,8 @@ questions:
   group: "Container Images"
   subquestions:
   - variable: image.appVersion
-    default: "4.2.0"
-    description: "MongoDB image tag"
+    default: "2.4.5"
+    description: "MATS app default version"
     type: string
     label: Image Tag
 - variable: defaultMongoCredentials
