@@ -6,4 +6,4 @@ portNumber: 80
 image:
   repository: matsapps/development
   appVersion: nightly
-  pullPolicy: IfNotPresent
+  pullPolicy: Always

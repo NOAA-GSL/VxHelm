@@ -10,4 +10,4 @@ portNumber: 27017
 image:
   repository: mongo
   appVersion: 4.2.0
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
