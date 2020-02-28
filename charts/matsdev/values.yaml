@@ -10,7 +10,7 @@ globals:
 matsmongo:
   persistentVolumeClaim: matsdata
 
-matsapp:
+app:
   name: aircraft
   appVersion: nightly
   persistentVolumeClaim: matsdata
