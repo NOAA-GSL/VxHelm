@@ -2,7 +2,7 @@ categories:
   -Database
 questions:
 - variable: defaultImage
-  default: "true"
+  default: true
   description: "Use default Docker images"
   label: Use Default Image
   type: boolean
@@ -15,8 +15,8 @@ questions:
     type: string
     label: Image Tag
 - variable: defaultMongoCredentials
-  default: "true"
-  required: "false"
+  default: true
+  required: false
   description: "Use the default Mongodb credentials?"
   label: Use Default Mongodb admin credentials.
   type: boolean
