@@ -1,4 +1,5 @@
 replicaCount: 1
+appName: app
 persistentVolumeClaim: matsdata
 rootUrl: https://rancher.localhost
 portNumber: 80
