@@ -3,19 +3,18 @@
 # Declare variables to be passed into your sub charts.
 
 replicaCount: 1
+globals:
+  matsMongoUser: "matsUser"
+  matsMongoPassword: "mu-2019"
 
 matsmongo:
   persistentVolumeClaim: matsdata
-  matsMongoUser: "matsUser"
-  matsMongoPassword: "mu-2019"
 
 matsapp:
   name: aircraft
   appVersion: nightly
   persistentVolumeClaim: matsdata
   rootUrl: https://rancher.localhost
-  matsMongoUser: "matsUser"
-  matsMongoPassword: "mu-2019"
   image:
     repository: matsapps/development
     appVersion: nightly
@@ -23,8 +22,6 @@ matsapp:
 matshome:
 persistentVolumeClaim: matsdata
 rootUrl: https://rancher.localhost
-matsMongoUser: "matsUser"
-matsMongoPassword: "mu-2019"
 image:
   repository: matsapps/development
   appVersion: nightly

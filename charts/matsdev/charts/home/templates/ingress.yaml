@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: home
+  name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
 spec:
   rules:
     - host: {{ .Values.rootUrl | replace "https://" "" }}
       http:
         paths:
-          - path: "/{{ .Release.Namespace }}/home"
+          - path: "/{{ .Release.Namespace }}/{{ .Chart.Name }}"
             backend:
-              serviceName: home
+              serviceName: {{ .Chart.Name }}
               servicePort: 80

@@ -13,10 +13,10 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   ports:
-    - name: 27017tcp01
-      port: 27017
+    - name: {{ .Values.portNumber }}tcp01
+      port: {{ .Values.portNumber }}
       protocol: TCP
-      targetPort: 27017
+      targetPort: {{ .Values.portNumber }}
   selector:
     workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-{{ .Chart.Name }}
   sessionAffinity: None

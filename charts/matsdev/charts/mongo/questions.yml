@@ -9,7 +9,7 @@ questions:
   show_subquestion_if: false
   group: "Container Images"
   subquestions:
-  - variable: image.tag
+  - variable: image.appVersion
     default: "4.2.0"
     description: "MongoDB image tag"
     type: string

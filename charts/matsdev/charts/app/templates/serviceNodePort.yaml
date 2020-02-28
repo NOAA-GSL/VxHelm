@@ -7,15 +7,17 @@ metadata:
     workload.cattle.io/workloadPortBased: "true"
   labels:
     cattle.io/creator: norman
-  name: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}-nodeport
   namespace: {{ .Release.Namespace }}
+  selfLink: /api/v1/namespaces/{{ .Release.Namespace }}/services/{{ .Chart.Name }}-nodeport
 spec:
+  externalTrafficPolicy: Cluster
   ports:
-    - name: 80tcp01-{{ .Chart.Name }}
-      port: 80
+    - name: {{ .Values.portNumber }}tcp01
+      port: {{ .Values.portNumber }}
       protocol: TCP
-      targetPort: 80
+      targetPort: {{ .Values.portNumber }}
   selector:
     workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-{{ .Chart.Name }}
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort

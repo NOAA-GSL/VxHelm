@@ -1,10 +1,10 @@
 apiVersion: v1
 data:
-  mongo-init.js: |
+  {{ .Chart.Name }}-init.js: |
     db.createUser(
             {
-                user: "{{ .Values.matsMongoUser }}",
-                pwd: "{{ .Values.matsMongoPassword }}",
+                user: "{{ .Values.global.matsMongoUser }}",
+                pwd: "{{ .Values.global.matsMongoPassword }}",
                 roles: [
                     {
                         role: "userAdminAnyDatabase",
@@ -23,5 +23,5 @@ data:
     );
 kind: ConfigMap
 metadata:
-  name: mongo-init
+  name: {{ .Chart.Name }}-init
   namespace: {{ .Release.Namespace }}

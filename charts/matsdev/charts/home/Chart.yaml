@@ -1,8 +1,8 @@
 apiVersion: v1
-name: matshome
+name: home
 version: 1.1.0
 appVersion: nightly
-description: Home landing page matsapp for a MATS deployment.
+description: Home landing page app for a MATS deployment.
 keywords:
 - mats
 - mongodb

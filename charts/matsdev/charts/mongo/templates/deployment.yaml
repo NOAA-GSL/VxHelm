@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-    field.cattle.io/publicEndpoints: '[{"protocol":"TCP","serviceName":"{{ .Release.Namespace }}:mongo-nodeport","allNodes":true}]'
+    field.cattle.io/publicEndpoints: '[{"protocol":"TCP","serviceName":"{{ .Release.Namespace }}:{{ .Chart.Name }}-nodeport","allNodes":true}]'
   labels:
     cattle.io/creator: norman
-    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
-  name: mongo
+    workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-{{ .Chart.Name }}"
+  name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
-  selfLink: /apis/apps/v1/namespaces/{{ .Release.Namespace }}/deployments/mongo
+  selfLink: "/apis/apps/v1/namespaces/{{ .Release.Namespace }}/deployments/{{ .Chart.Name }}"
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
+      workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-{{ .Chart.Name }}"
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -25,9 +25,9 @@ spec:
   template:
     metadata:
       annotations:
-        field.cattle.io/ports: '[[{"containerPort":27017,"dnsName":"mongo-nodeport","kind":"NodePort","name":"27017tcp01","protocol":"TCP"}]]'
+        field.cattle.io/ports: '[[{"containerPort":{{ .Values.portNumber }},"dnsName":"{{ .Chart.Name }}-nodeport","kind":"NodePort","name":"{{ .Values.portNumber }}tcp01","protocol":"TCP"}]]'
       labels:
-        workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-mongo
+        workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-{{ .Chart.Name }}"
     spec:
       containers:
       - env:
@@ -37,12 +37,12 @@ spec:
           value: "admin"
         - name: MONGO_INITDB_DATABASE
           value: "admin"
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-        imagePullPolicy: Always
-        name: mongo
+        image: {{ .Values.image.repository }}:{{ .Values.image.appVersion }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: {{ .Chart.Name }}
         ports:
-          - containerPort: 27017
-            name: 27017tcp01
+          - containerPort: {{ .Values.portNumber }}
+            name: {{ .Values.portNumber }}tcp01
             protocol: TCP
         resources: {}
         securityContext:
@@ -59,7 +59,7 @@ spec:
           - mountPath: /data/db
             name: data
             subPath: {{ .Values.persistentVolumeClaim }}/{{ .Release.Namespace }}/mongodata
-          - name: mongo-init
+          - name: {{ .Chart.Name }}-init
             mountPath: /docker-entrypoint-initdb.d
       dnsPolicy: ClusterFirst
       restartPolicy: Always
@@ -70,6 +70,6 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: {{ .Values.persistentVolumeClaim }}
-        - name: mongo-init
+        - name: {{ .Chart.Name }}-init
           configMap:
-            name: mongo-init
+            name: {{ .Chart.Name }}-init

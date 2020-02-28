@@ -8,7 +8,7 @@ questions:
   label: The root URL of this deployment
 - variable: defaultImage
   default: "true"
-  description: "Use default matsapp version for Docker image tag."
+  description: "Use default matshome version for Docker image tag."
   label: Use Default App version
   type: boolean
   show_subquestion_if: false
@@ -16,12 +16,12 @@ questions:
   subquestions:
    - variable: image.appVersion
      default: "nightly"
-     description: "matsapp version is used to create the matsapp docker image tag."
+     description: "matshome version is used to create the matshome docker image tag."
      type: string
      label: App Version
    - variable: image.repository
      default: "matsapps/development"
-     description: "matsapp repository to pull the matsapp docker image from."
+     description: "app repository to pull the matshome docker image from."
      type: string
      label: App Version
 - variable: defaultCredentials
@@ -43,4 +43,4 @@ questions:
   description: "The preconfigured persistent volume claim"
   type: pvc
   required: true
-  label: The persistent Volume Claim where the matsapp data will be persisted - MUST MATCH MATSMONGO AND MATSHOME
+  label: The persistent Volume Claim where the app data will be persisted - MUST MATCH MATSMONGO AND MATSHOME

@@ -1,0 +1,12 @@
+# Default values for mongo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# the volume that will be mounted for all the mats data
+# this volume must be shared by the mongo app, the home app, and all the other apps
+persistentVolumeClaim: matsdata
+portNumber: 27017
+image:
+  repository: mongo
+  appVersion: 4.2.0
+  pullPolicy: IfNotPresent

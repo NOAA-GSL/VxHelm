@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:{{ .Chart.Name }}"]'
+    workload.cattle.io/targetWorkloadIdNoop: "true"
+    workload.cattle.io/workloadPortBased: "true"
+  labels:
+    cattle.io/creator: norman
+  name: {{ .Chart.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+    - name: {{ .Values.portNumber }}tcp01-{{ .Chart.Name }}
+      port: {{ .Values.portNumber }}
+      protocol: TCP
+      targetPort: {{ .Values.portNumber }}
+  selector:
+    workload.user.cattle.io/workloadselector: deployment-{{ .Release.Namespace }}-{{ .Chart.Name }}
+  sessionAffinity: None
+  type: ClusterIP

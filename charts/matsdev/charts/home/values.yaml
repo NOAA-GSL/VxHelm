@@ -1,9 +1,8 @@
 replicaCount: 1
 persistentVolumeClaim: matsdata
 rootUrl: https://rancher.localhost
-matsMongoUser: "matsUser"
-matsMongoPassword: "mu-2019"
+portNumber: 80
 image:
-  repository: matsapps/production
+  repository: matsapps/development
   appVersion: nightly
   pullPolicy: IfNotPresent
