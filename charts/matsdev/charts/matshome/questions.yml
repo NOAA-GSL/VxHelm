@@ -1,0 +1,41 @@
+categories:
+  - MATSAPP
+questions:
+- variable: rootUrl
+  default: https://rancher.localhost
+  type: string
+  required: true
+  label: The root URL of this deployment
+- variable: defaultImage
+  default: "true"
+  description: "Use default common version for Docker image tag."
+  label: Use Default App version
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+   - variable: image.appVersion
+     default: "2.4.2"
+     description: "common version is used to create the common docker image tag"
+     type: string
+     label: App Version
+- variable: defaultCredentials
+  required: false
+  default: "true"
+  description: "Use the default Mongodb credentials."
+  label: Use Default Mongodb credentials.
+  type: boolean
+  show_subquestion_if: false
+  group: "Credentials"
+  subquestions:
+    - variable: matsMongoPassword
+      default: ""
+      description: "the password for this mongo user"
+      type: string
+      label: Mongodb password
+- variable: persistentVolumeClaim
+  default: "matsdata"
+  description: "The preconfigured persistent volume claim"
+  type: pvc
+  required: true
+  label: The persistent Volume Claim where the common data will be persisted - MUST MATCH MATSMONGO AND MATSHOME

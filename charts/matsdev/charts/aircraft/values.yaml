@@ -1,0 +1,8 @@
+appName: aircraft
+appReference: aircraft
+portNumber: 80
+image:
+  repository: matsapps/development
+  appVersion: nightly
+  pullPolicy: Always
+

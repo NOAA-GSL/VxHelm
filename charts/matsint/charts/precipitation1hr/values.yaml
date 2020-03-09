@@ -1,0 +1,8 @@
+appName: precipitation1hr
+appReference: precipitation1hr
+portNumber: 80
+image:
+  repository: matsapps/integration
+  appVersion: 2.4.5
+  pullPolicy: Always
+

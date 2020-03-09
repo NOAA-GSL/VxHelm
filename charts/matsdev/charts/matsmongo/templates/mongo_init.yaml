@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  mongo-init.js: |
+    db.createUser(
+            {
+                user: "matsUser",
+                pwd: "{{ .Values.global.matsMongoPassword }}",
+                roles: [
+                    {
+                        role: "userAdminAnyDatabase",
+                        db: "admin"
+                    },
+                    {
+                        role: "dbAdminAnyDatabase",
+                        db: "admin"
+                    },
+                    {
+                        role: "readWriteAnyDatabase",
+                        db: "admin"
+                    }
+                ]
+            }
+    );
+kind: ConfigMap
+metadata:
+  name: mongo-init
+  namespace: {{ .Release.Namespace }}

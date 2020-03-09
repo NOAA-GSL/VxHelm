@@ -1,0 +1,9 @@
+appName: home
+appReference: home
+replicaCount: 1
+persistentVolumeClaim: matsdata
+image:
+  repository: matsapps/production
+  tag: 2.4.5
+  pullPolicy: IfNotPresent
+

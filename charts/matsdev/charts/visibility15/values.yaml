@@ -1,0 +1,8 @@
+appName: visibility15
+appReference: visibility15
+portNumber: 80
+image:
+  repository: matsapps/development
+  appVersion: nightly
+  pullPolicy: Always
+

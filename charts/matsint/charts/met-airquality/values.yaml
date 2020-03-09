@@ -1,0 +1,8 @@
+appName: met-airquality
+appReference: met-airquality
+portNumber: 80
+image:
+  repository: matsapps/integration
+  appVersion: 2.4.5
+  pullPolicy: Always
+

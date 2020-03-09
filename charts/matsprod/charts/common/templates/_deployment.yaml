@@ -1,0 +1,89 @@
+{{- define "common.deployment" -}}
+{{- $common := dict "Values" .Values.common -}}
+{{- $noCommon := omit .Values "common" -}}
+{{- $overrides := dict "Values" $noCommon -}}
+{{- $noValues := omit . "Values" -}}
+{{- with merge $noValues $overrides $common -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    field.cattle.io/publicEndpoints: '[{"addresses":[""],"port":{{ .Values.portNumber }},"protocol":"HTTP","serviceName":"{{ .Release.Namespace }}:{{ .Values.appName }}","ingressName":"{{ .Release.Namespace }}:matsapps-{{ .Release.Namespace }}","hostname":"{{ .Values.global.rootUrl }}","path":"/{{ .Release.Namespace }}/{{ .Values.appName }}","allNodes":false},{"protocol":"TCP","serviceName":"{{ .Release.Namespace }}:{{ .Values.appName }}-nodeport","allNodes":true}]'
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-{{ .Values.appName }}"
+  name: {{ .Values.appName }}
+  namespace: {{ .Release.Namespace }}
+  selfLink: "/apis/apps/v1/namespaces/{{ .Release.Namespace }}/deployments/{{ .Values.appName }}"
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-{{ .Values.appName }}"
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        field.cattle.io/ports: '[[{"containerPort":{{ .Values.portNumber }},"dnsName":"{{ .Values.appName }}-nodeport","kind":"NodePort","name":"{{ .Values.portNumber }}tcp01","protocol":"TCP"}]]'
+      labels:
+        workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-{{ .Values.appName }}"
+    spec:
+      containers:
+        - env:
+            - name: MONGO_URL
+              value: "mongodb://matsUser:{{ .Values.global.matsMongoPassword }}@mongo:27017/{{ .Values.appReference }}?authSource=admin"
+            - name: DEPLOYMENT_ENVIRONMENT
+              {{- if eq .Release.Namespace "matsdev" }}
+              value: "development"
+              {{- else if eq .Release.Namespace "matspreint" }}
+              value: "production"
+              {{- else if eq .Release.Namespace "matsint" }}
+              value: "production"
+              {{- else if or (eq .Release.Namespace "matsprod") (eq .Release.Namespace "metexpress") }}
+              value: "production"
+              {{- end }}
+            - name: GROUP_ORDER
+              value: Upper Air,Ceiling and Visibility,Surface,Precipitation,Radar,METexpress
+            - name: ROOT_URL
+              value: "{{ .Values.global.rootUrl }}/{{ .Release.Namespace }}/{{ .Values.appName }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.appReference }}-{{ .Values.image.appVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          name: {{ .Values.appName }}
+          ports:
+            - containerPort: {{ .Values.portNumber }}
+              name: {{ .Values.portNumber }}tcp01
+              protocol: TCP
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: {}
+            privileged: false
+            readOnlyRootFilesystem: false
+            runAsNonRoot: false
+          stdin: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          tty: true
+          volumeMounts:
+            - mountPath: /usr/app/settings
+              name: settings
+              subPath: {{ .Release.Namespace }}/settings
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - name: settings
+          persistentVolumeClaim:
+            claimName: {{ .Values.global.persistentVolumeClaim }}
+{{- end -}}
+{{- end -}}
+

@@ -1,0 +1,6 @@
+global:
+  rootUrl: https://rancher.localhost
+  matsMongoPassword: mu-2019
+  mongoAdminPassword: Adm1n0
+  persistentVolumeClaim: matsdata
+

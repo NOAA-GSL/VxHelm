@@ -1,0 +1,8 @@
+appName: met-upperair
+appReference: met-upperair
+portNumber: 80
+image:
+  repository: matsapps/development
+  appVersion: nightly
+  pullPolicy: Always
+

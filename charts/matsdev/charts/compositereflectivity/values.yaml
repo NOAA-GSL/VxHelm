@@ -1,0 +1,8 @@
+appName: compositereflectivity
+appReference: compositeReflectivity
+portNumber: 80
+image:
+  repository: matsapps/development
+  appVersion: nightly
+  pullPolicy: Always
+

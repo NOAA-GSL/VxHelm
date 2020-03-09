@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: home
+  namespace: {{ .Release.Namespace }}
+spec:
+  rules:
+    - host: {{ .Values.global.rootUrl | replace "https://" "" }}
+      http:
+        paths:
+          - path: "/{{ .Release.Namespace }}/home"
+            backend:
+              serviceName: home
+              servicePort: 80

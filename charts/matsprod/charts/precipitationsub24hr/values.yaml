@@ -1,0 +1,8 @@
+appName: precipitationsub24hr
+appReference: precipitationSub24hr
+portNumber: 80
+image:
+  repository: matsapps/production
+  appVersion: 2.4.5
+  pullPolicy: Always
+

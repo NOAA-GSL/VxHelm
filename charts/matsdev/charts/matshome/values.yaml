@@ -1,0 +1,9 @@
+appName: home
+appReference: home
+replicaCount: 1
+persistentVolumeClaim: matsdata
+image:
+  repository: matsapps/development
+  tag: nightly
+  pullPolicy: IfNotPresent
+

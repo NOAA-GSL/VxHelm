@@ -1,0 +1,47 @@
+categories:
+  - MATSAPP
+questions:
+
+- variable: global.rootUrl
+  default: https://rancher.localhost
+  type: string
+  required: true
+  label: The root URL of this deployment
+
+- variable: global.defaultMongoPassword
+  required: false
+  default: "true"
+  description: "Use the default Mongodb admin credentials?"
+  label: Use Default Mongodb admin credentials.
+  type: boolean
+  show_subquestion_if: false
+  group: "AdminCredentials"
+  subquestions:
+    - variable: global.mongoAdminPassword
+      default: ""
+      type: string
+      required: true
+      description: "The password for this mongo admin user 'admin'."
+      label: The default admin user password for the embedded mongo database
+
+- variable: defaultCredentials
+  required: false
+  default: "true"
+  description: "Use the default Mongodb application credentials?"
+  label: Use Default Mongodb application credentials.
+  type: boolean
+  show_subquestion_if: false
+  group: "Credentials"
+  subquestions:
+    - variable: global.matsMongoPassword
+      default: ""
+      description: "the password for this mongo user 'matsUser'"
+      type: string
+      label: Mongodb password
+
+- variable: global.persistentVolumeClaim
+  default: "matsdata"
+  description: "The preconfigured persistent volume claim."
+  type: pvc
+  required: true
+  label: The persistent Volume Claim where the common data will be persisted - MUST MATCH MATSMONGO AND MATSHOME

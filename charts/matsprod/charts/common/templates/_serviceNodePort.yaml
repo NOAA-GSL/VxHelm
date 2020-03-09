@@ -1,0 +1,31 @@
+{{- define "common.serviceNodePort" -}}
+{{- $common := dict "Values" .Values.common -}}
+{{- $noCommon := omit .Values "common" -}}
+{{- $overrides := dict "Values" $noCommon -}}
+{{- $noValues := omit . "Values" -}}
+{{- with merge $noValues $overrides $common -}}
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    field.cattle.io/targetWorkloadIds: '["deployment:{{ .Release.Namespace }}:{{ .Values.appName }}"]'
+    workload.cattle.io/targetWorkloadIdNoop: "true"
+    workload.cattle.io/workloadPortBased: "true"
+  labels:
+    cattle.io/creator: norman
+  name: {{ .Values.appName }}-nodeport
+  namespace: {{ .Release.Namespace }}
+  selfLink: /api/v1/namespaces/{{ .Release.Namespace }}/services/{{ .Values.appName }}-nodeport
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: {{ .Values.portNumber }}tcp01
+      port: {{ .Values.portNumber }}
+      protocol: TCP
+      targetPort: {{ .Values.portNumber }}
+  selector:
+    workload.user.cattle.io/workloadselector: "deployment-{{ .Release.Namespace }}-{{ .Values.appName }}"
+  sessionAffinity: None
+  type: NodePort
+{{- end -}}
+{{- end -}}
