@@ -75,6 +75,26 @@ spec:
             - mountPath: /usr/app/settings
               name: settings
               subPath: {{ .Release.Namespace }}/settings
+          readinessProbe:
+            failureThreshold: 6
+            httpGet:
+              path: /status
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 2
+            timeoutSeconds: 2
+          livenessProbe:
+            failureThreshold: 6
+            httpGet:
+              path: /status
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 120
+            successThreshold: 1
+            timeoutSeconds: 2
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
