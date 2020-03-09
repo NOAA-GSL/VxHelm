@@ -18,7 +18,7 @@ questions:
   group: "AdminCredentials"
   subquestions:
     - variable: global.mongoAdminPassword
-      default: ""
+      default: "Adm1n0"
       type: string
       required: true
       description: "The password for this mongo admin user 'admin'."
@@ -34,7 +34,7 @@ questions:
   group: "Credentials"
   subquestions:
     - variable: global.matsMongoPassword
-      default: ""
+      default: "mu-2019"
       description: "the password for this mongo user 'matsUser'"
       type: string
       label: Mongodb password
