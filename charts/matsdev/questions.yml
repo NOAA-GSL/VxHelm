@@ -1,40 +1,47 @@
 categories:
+  - MATSAPP
 questions:
-- variable: defaultImage
-  default: true
-  description: "Use default Docker images"
-  label: Use Default Image
+
+- variable: global.rootUrl
+  default: https://rancher.localhost
+  type: string
+  required: true
+  label: The root URL of this deployment
+
+- variable: global.defaultMongoPassword
+  required: false
+  default: "true"
+  description: "Use the default Mongodb admin credentials?"
+  label: Use Default Mongodb admin credentials.
   type: boolean
   show_subquestion_if: false
-  group: "Container Images"
+  group: "AdminCredentials"
   subquestions:
-  - variable: image.appVersion
-    default: "nightly"
-    description: "MATS app default version"
-    type: string
-    label: Image Tag
-- variable: defaultMongoCredentials
-  default: true
+    - variable: global.mongoAdminPassword
+      default: ""
+      type: string
+      required: true
+      description: "The password for this mongo admin user 'admin'."
+      label: The default admin user password for the embedded mongo database
+
+- variable: defaultCredentials
   required: false
-  description: "Use the default Mongodb credentials?"
-  label: Use Default Mongodb admin credentials.
+  default: "true"
+  description: "Use the default Mongodb application credentials?"
+  label: Use Default Mongodb application credentials.
   type: boolean
   show_subquestion_if: false
   group: "Credentials"
   subquestions:
-    - variable: global.matsMongoUser
-      default: "matsUser"
-      description: "The MATS mongo user."
-      type: string
-      label: Mats Mongodb user
     - variable: global.matsMongoPassword
-      default: "mu-2019"
-      description: "The password for this MATS mongo user."
+      default: ""
+      description: "the password for this mongo user 'matsUser'"
       type: string
       label: Mongodb password
-- variable: persistentVolumeClaim
-  description: "The preconfigured persistent volume claim - minimum 10GB"
-  label: The persistent Volume Claim where database data will be persisted MUST MATCH MATSMONGO AND MATSHOME
+
+- variable: global.persistentVolumeClaim
   default: "matsdata"
+  description: "The preconfigured persistent volume claim."
   type: pvc
   required: true
+  label: The persistent Volume Claim where the common data will be persisted - MUST MATCH MATSMONGO AND MATSHOME

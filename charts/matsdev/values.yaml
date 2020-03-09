@@ -1,36 +1,5 @@
-# Default values for matsdev.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your sub charts.
-
-replicaCount: 1
-persistentVolumeClaim: matsdata
-rootUrl: https://rancher.localhost
-image:
-  repository: matsapps/development
-  appVersion: nightly
-
 global:
-  matsMongoUser: "matsUser"
-  matsMongoPassword: "mu-2019"
-
-matsmongo:
-  appName: mongo
-  persistentVolumeClaim: matsdata
-
-app:
-  appName: aircraft
-  appVersion: nightly
-  persistentVolumeClaim: matsdata
   rootUrl: https://rancher.localhost
-  image:
-    repository: matsapps/development
-    appVersion: nightly
-
-matshome:
-  appName: home
+  matsMongoPassword: mu-2019
+  mongoAdminPassword: Adm1n0
   persistentVolumeClaim: matsdata
-  rootUrl: https://rancher.localhost
-  image:
-    repository: matsapps/development
-    appVersion: nightly
-
