@@ -1,0 +1,8 @@
+appName: ceiling15
+appReference: ceiling15
+portNumber: 80
+image:
+  repository: matsapps/development
+  appVersion: nightly
+  pullPolicy: Always
+
