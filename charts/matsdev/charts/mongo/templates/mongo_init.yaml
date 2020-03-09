@@ -3,7 +3,7 @@ data:
   mongo-init.js: |
     db.createUser(
             {
-                user: "{{ .Values.global.matsMongoUser }}",
+                user: "matsUser",
                 pwd: "{{ .Values.global.matsMongoPassword }}",
                 roles: [
                     {

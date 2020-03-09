@@ -23,13 +23,8 @@ questions:
   show_subquestion_if: false
   group: "Credentials"
   subquestions:
-    - variable: matsMongoUser
-      default: "matsUser"
-      description: "The MATS mongo user."
-      type: string
-      label: Mats Mongodb user
     - variable: matsMongoPassword
-      default: "mu-2019"
+      default: ""
       description: "The password for this MATS mongo user."
       type: string
       label: Mongodb password
