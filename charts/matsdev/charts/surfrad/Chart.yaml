@@ -1,8 +1,12 @@
-apiVersion: v1
+apiVersion: v2
 name: surfrad
-version: 1.1.0
+version: 2.1.0
 appVersion: nightly
 description: MATS common for a MATS deployment.
 keywords:
 - mats
 icon: file://../common/matsapp.png
+dependencies:
+  - name: common
+    version: 4.3.0
+    repository: file://../common
